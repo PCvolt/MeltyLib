@@ -12,30 +12,92 @@ void testCharacterObjectOffsets()
 {
     auto *chr = (MeltyLib::CharacterObject *)nullptr;
 
-    check_offset(chr, offset_0x20, 0x20);
-    check_offset(chr, offset_0x00, 0);
-    check_offset(chr, smtg, 0xC);
+    check_offset(chr, isInitialized, 0x0);
+    check_offset(chr, u_characterAndPlayer, 0x4);
+    check_offset(chr, u_paletteAndPlayer, 0x8);
+    check_offset(chr, moon, 0xC);
+
     check_offset(chr, action, 0x10);
     check_offset(chr, animCounter, 0x14);
-    check_offset(chr, u_SpriteNumber, 0x18);
-    check_offset(chr, animSubCounter, 0x1C);
-    check_offset(chr, yellowLife, 0xBC);
-    check_offset(chr, redLife, 0xC0);
+    check_offset(chr, spriteCounter, 0x18);
+    check_offset(chr, animSubcounter, 0x1C);
+
+    check_offset(chr, u_perfect, 0x50);
+
+    check_offset(chr, u_canMove, 0x64);
+    check_offset(chr, u_frameCountWeird, 0x68);
+    check_offset(chr, u_10IfInHitstun, 0x6C);
+
+    check_offset(chr, u_ExGuardFlag, 0xB0);
+
+    check_offset(chr, health, 0xBC);
+    check_offset(chr, redHealth, 0xC0);
     check_offset(chr, guardGauge, 0xC4);
+
     check_offset(chr, guardState, 0xCC);
     check_offset(chr, timerBeforeGuardRegen, 0xD0);
-    check_offset(chr, meterAfterHeat, 0xE0);
-    check_offset(chr, heatTimer, 0xE4);
+    check_offset(chr, timerGuardQualityRegen, 0xD4);
+    check_offset(chr, guardGaugeQuality, 0xD8);
+
+    check_offset(chr, meter, 0xE0);
+    check_offset(chr, heatTime, 0xE4);
+
+    check_offset(chr, u_frameCount, 0xF0);
+
     check_offset(chr, xPosNext, 0x108);
-    check_offset(chr, xPosCurr, 0x114);
-    check_offset(chr, gravity, 0x118);
+    check_offset(chr, yPosNext, 0x10C);
+
+    check_offset(chr, xPos, 0x114);
+    check_offset(chr, yPos, 0x118);
     check_offset(chr, xVel, 0x11C);
     check_offset(chr, yVel, 0x120);
+    check_offset(chr, xAcceleration, 0x124);
+    check_offset(chr, yAcceleration, 0x126);
+
+    check_offset(chr, u_deathFlag, 0x177);
+    check_offset(chr, u_attackActives, 0x178);
+
+    check_offset(chr, u_timeSpentAirborne, 0x188);
+
     check_offset(chr, hitstop, 0x1A4);
-    check_offset(chr, hitstunGrounded, 0x1AC);
-    check_offset(chr, smtg1, 0x164);
-    check_offset(chr, smtg2, 0x328);
-    check_offset(chr, currentMeter, 0xF064);
+    check_offset(chr, hitstunCountUp, 0x1A8);
+    check_offset(chr, hitstunOnGround, 0x1AC);
+    check_offset(chr, u_hitstunFlags, 0x1B0);
+
+    check_offset(chr, pItselfPlus0x4, 0x2CC);
+
+    check_offset(chr, inputDirection, 0x2E8);
+    check_offset(chr, inputButtons, 0x2EC);
+
+    check_offset(chr, u_nbCommandsEntered, 0x2F4);
+
+    check_offset(chr, spriteRotation, 0x300);
+
+    check_offset(chr, facingLeftFlag, 0x314);
+
+    check_offset(chr, facingLeftFlag, 0x314);
+    check_offset(chr, stanceFlag, 0x318);
+    check_offset(chr, pCurrentSequence, 0x31C);
+    check_offset(chr, currentTexture, 0x320);
+    check_offset(chr, u_attackActives2, 0x324);
+    check_offset(chr, pItself, 0x328);
+
+    check_offset(chr, timeSpentInSequence, 0x334);
+
+    check_offset(chr, nbChainedAttacks, 0x3E0);
+
+    check_offset(chr, nbInputsMvt, 0x3E8);
+    check_offset(chr, inputsHistoryMvt, 0x3EA);
+    check_offset(chr, nbInputsA, 0x4EA);
+    check_offset(chr, inputsHistoryA, 0x4EC);
+    check_offset(chr, nbInputsB, 0x5EC);
+    check_offset(chr, inputsHistoryB, 0x5EE);
+    check_offset(chr, nbInputsC, 0x6EE);
+    check_offset(chr, inputsHistoryC, 0x6F0);
+    check_offset(chr, nbInputsD, 0x7F0);
+    check_offset(chr, inputsHistoryD, 0x7F2);
+    check_offset(chr, nbInputsABC, 0x8F2);
+    check_offset(chr, inputsHistoryABC, 0x8F4);
 }
 
 void testActionsValues()
