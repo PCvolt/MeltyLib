@@ -3,15 +3,18 @@
   <Structure Name="Character" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
     <Elements>
       <Element Offset="0" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000000" Description="isInitialized" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="4" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000004" Description="u_characterAndPlayer" DisplayMethod="Hexadecimal"/>
-      <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="u_paletteAndPlayer" DisplayMethod="Hexadecimal"/>
+      <Element Offset="4" Vartype="Byte" Bytesize="1" OffsetHex="00000004" Description="player" DisplayMethod="Hexadecimal"/>
+      <Element Offset="5" Vartype="Byte" Bytesize="1" OffsetHex="00000005" Description="character" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="6" Vartype="Byte" Bytesize="1" OffsetHex="00000006" Description="character(again)" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="7" Vartype="Byte" Bytesize="1" OffsetHex="00000007" Description="team" DisplayMethod="Hexadecimal"/>
+      <Element Offset="8" Vartype="2 Bytes" Bytesize="2" OffsetHex="00000008" Description="player" DisplayMethod="Hexadecimal"/>
+      <Element Offset="10" Vartype="2 Bytes" Bytesize="2" OffsetHex="0000000A" Description="palette" DisplayMethod="Hexadecimal"/>
       <Element Offset="12" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000000C" Description="moon" DisplayMethod="Unsigned Integer"/>
       <Element Offset="16" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000010" Description="Action" DisplayMethod="Unsigned Integer"/>
       <Element Offset="20" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000014" Description="animCounter" DisplayMethod="Unsigned Integer"/>
       <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="spriteCounter" DisplayMethod="Unsigned Integer"/>
       <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="animSubcounter" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" DisplayMethod="Hexadecimal"/>
+      <Element Offset="32" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000020" DisplayMethod="Hexadecimal"/>
       <Element Offset="40" Vartype="4 Bytes" Bytesize="4" RLECount="10" OffsetHex="00000028" DisplayMethod="Unsigned Integer"/>
       <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="u_perfect" DisplayMethod="Unsigned Integer"/>
       <Element Offset="84" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000054" DisplayMethod="Unsigned Integer"/>
@@ -21,7 +24,7 @@
       <Element Offset="112" Vartype="4 Bytes" Bytesize="4" RLECount="6" OffsetHex="00000070" DisplayMethod="Unsigned Integer"/>
       <Element Offset="136" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000088" DisplayMethod="Signed Integer"/>
       <Element Offset="144" Vartype="4 Bytes" Bytesize="4" RLECount="8" OffsetHex="00000090" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="176" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B0" Description="u_EXguardFlag" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="176" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B0" Description="u_ExGuardFlag" DisplayMethod="Unsigned Integer"/>
       <Element Offset="180" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000000B4" DisplayMethod="Unsigned Integer"/>
       <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="health" DisplayMethod="Unsigned Integer"/>
       <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="redHealth" DisplayMethod="Unsigned Integer"/>
@@ -34,7 +37,10 @@
       <Element Offset="220" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000DC" DisplayMethod="Unsigned Integer"/>
       <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="meter" DisplayMethod="Unsigned Integer"/>
       <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="heat" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="232" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000000E8" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="232" Vartype="2 Bytes" Bytesize="2" OffsetHex="000000E8" Description="heatMode" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="234" Vartype="2 Bytes" Bytesize="2" OffsetHex="000000EA" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="236" Vartype="2 Bytes" Bytesize="2" OffsetHex="000000EC" Description="u_heatMax" DisplayMethod="Signed Integer"/>
+      <Element Offset="238" Vartype="2 Bytes" Bytesize="2" OffsetHex="000000EE" Description="u_timerHeatDecrease" DisplayMethod="Signed Integer"/>
       <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="frameCount" DisplayMethod="Unsigned Integer"/>
       <Element Offset="244" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="000000F4" DisplayMethod="Unsigned Integer"/>
       <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="xPosNext" DisplayMethod="Signed Integer"/>
@@ -49,7 +55,9 @@
       <Element Offset="296" Vartype="4 Bytes" Bytesize="4" RLECount="6" OffsetHex="00000128" DisplayMethod="Unsigned Integer"/>
       <Element Offset="320" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000140" DisplayMethod="Hexadecimal"/>
       <Element Offset="324" Vartype="4 Bytes" Bytesize="4" RLECount="8" OffsetHex="00000144" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="356" Vartype="2 Bytes" Bytesize="2" OffsetHex="00000164" DisplayMethod="Signed Integer"/>
+      <Element Offset="356" Vartype="Byte" Bytesize="1" OffsetHex="00000164" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="357" Vartype="Byte" Bytesize="1" OffsetHex="00000165" DisplayMethod="Signed Integer"/>
+      <Element Offset="358" Vartype="2 Bytes" Bytesize="2" OffsetHex="00000166" DisplayMethod="Signed Integer"/>
       <Element Offset="360" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000168" DisplayMethod="Unsigned Integer"/>
       <Element Offset="375" Vartype="Byte" Bytesize="1" OffsetHex="00000177" Description="u_deathFlag" DisplayMethod="Unsigned Integer"/>
       <Element Offset="376" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000178" Description="u_activesMeleeAttack" DisplayMethod="Hexadecimal"/>
@@ -66,7 +74,9 @@
       <Element Offset="452" Vartype="4 Bytes" Bytesize="4" RLECount="12" OffsetHex="000001C4" DisplayMethod="Unsigned Integer"/>
       <Element Offset="500" Vartype="Pointer" Bytesize="4" OffsetHex="000001F4" DisplayMethod="Unsigned Integer"/>
       <Element Offset="504" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001F8" DisplayMethod="Hexadecimal"/>
-      <Element Offset="508" Vartype="4 Bytes" Bytesize="4" RLECount="52" OffsetHex="000001FC" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="508" Vartype="4 Bytes" Bytesize="4" RLECount="10" OffsetHex="000001FC" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="548" Vartype="2 Bytes" Bytesize="2" RLECount="2" OffsetHex="00000224" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="552" Vartype="4 Bytes" Bytesize="4" RLECount="41" OffsetHex="00000228" DisplayMethod="Unsigned Integer"/>
       <Element Offset="716" Vartype="Pointer" Bytesize="4" OffsetHex="000002CC" Description="pCharacterObject+0x4" DisplayMethod="Unsigned Integer">
         <Structure Name="Autocreated from 00555134" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
           <Elements>
@@ -236,10 +246,12 @@
       <Element Offset="752" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002F0" DisplayMethod="Unsigned Integer"/>
       <Element Offset="756" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002F4" Description="u_nbCommandsEntered" DisplayMethod="Hexadecimal"/>
       <Element Offset="760" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000002F8" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="768" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000300" Description="spriteRotation" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="776" Vartype="Float" Bytesize="4" OffsetHex="00000308" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="780" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000030C" DisplayMethod="Signed Integer"/>
-      <Element Offset="788" Vartype="Byte" Bytesize="1" OffsetHex="00000314" Description="FacingLeftFlag" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="768" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000300" Description="spriteRotation" DisplayMethod="Signed Integer"/>
+      <Element Offset="772" Vartype="Float" Bytesize="4" RLECount="2" OffsetHex="00000304" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="780" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000030C" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="784" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000310" DisplayMethod="Signed Integer"/>
+      <Element Offset="788" Vartype="Byte" Bytesize="1" OffsetHex="00000314" Description="facingLeftFlag" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="789" Vartype="Byte" Bytesize="1" OffsetHex="00000315" Description="opponentIsLeftToMe" DisplayMethod="Unsigned Integer"/>
       <Element Offset="792" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000318" Description="u_stanceFlag(crouch/stand/airborne)" DisplayMethod="Hexadecimal"/>
       <Element Offset="796" Vartype="Pointer" Bytesize="4" OffsetHex="0000031C" Description="pCurrentSequence" DisplayMethod="Unsigned Integer">
         <Structure Name="Autocreated from 04372DF0" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
@@ -2942,10 +2954,18 @@
       </Element>
       <Element Offset="820" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000334" Description="timeSpentInSequence" DisplayMethod="Unsigned Integer"/>
       <Element Offset="824" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000338" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="828" Vartype="Double" Bytesize="8" OffsetHex="0000033C" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="836" Vartype="4 Bytes" Bytesize="4" RLECount="37" OffsetHex="00000344" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="984" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003D8" DisplayMethod="Signed Integer"/>
-      <Element Offset="988" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003DC" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="828" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000033C" DisplayMethod="Hexadecimal"/>
+      <Element Offset="836" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000344" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="852" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000354" Description="attacksSum" DisplayMethod="Hexadecimal"/>
+      <Element Offset="856" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000358" Description="u_superInputs" DisplayMethod="Hexadecimal"/>
+      <Element Offset="860" Vartype="Byte" Bytesize="1" OffsetHex="0000035C" Description="specialInputs" DisplayMethod="Hexadecimal"/>
+      <Element Offset="861" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="0000035D" DisplayMethod="Hexadecimal"/>
+      <Element Offset="864" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000360" Description="u_specialAirInputs" DisplayMethod="Hexadecimal"/>
+      <Element Offset="868" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000364" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="876" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000036C" Description="u_Dspecials" DisplayMethod="Hexadecimal"/>
+      <Element Offset="880" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000370" DisplayMethod="Hexadecimal"/>
+      <Element Offset="888" Vartype="4 Bytes" Bytesize="4" RLECount="24" OffsetHex="00000378" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="984" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003D8" DisplayMethod="Signed Integer"/>
       <Element Offset="992" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003E0" Description="nbChainedAttacks" DisplayMethod="Unsigned Integer"/>
       <Element Offset="996" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003E4" DisplayMethod="Unsigned Integer"/>
       <Element Offset="1000" Vartype="2 Bytes" Bytesize="2" OffsetHex="000003E8" Description="nbInputsMvt" DisplayMethod="Signed Integer"/>

@@ -5,7 +5,7 @@
 #ifndef MELTYLIB_ACTION_H
 #define MELTYLIB_ACTION_H
 
-enum Action : int {
+enum Action : unsigned int {
     ACTION_IDLE,
     ACTION_5A,
     ACTION_5B,

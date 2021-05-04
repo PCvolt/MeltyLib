@@ -164,11 +164,13 @@ namespace MeltyLib {
         InputsHistory inputsHistoryD[64]; //0x7F2
         short nbInputsABC; //0x8F2
         InputsHistory inputsHistoryABC[64]; //0x8F4
-        char padEnd[104]; //0xAF8 - 0x9F4
+        char padEnd[264]; //0xAF8 - 0x9F4
     };
 
-    extern CharacterObject &player1;
-    extern CharacterObject &player2;
+    extern CharacterObject &character1;
+    extern CharacterObject &character2;
+    extern CharacterObject &character3;
+    extern CharacterObject &character4;
 }
 
 

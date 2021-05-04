@@ -57,4 +57,20 @@ in_EAX + 0x324 sprite ?
  - Framestep
  - Macro
  - Fix dummy "block first attack"
-*/
+
+Hime initializes a partner (Arcueid) just for her loss animation.
+
+ SHIELD BEHAVIOUR
+ check c-arc 2[D] not 60F
+
+ C moon standing: 12% (0.2% per frame: 60F)
+ H moons: 0%
+ F moon: 25% (1% per frame: 25F)
+
+ C arc:
+ - 2D: 2% 10F
+ - dash 2D: 4.4% 22F
+
+ F arc: 2D 10% 10F
+
+ */

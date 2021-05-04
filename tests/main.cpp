@@ -8,6 +8,11 @@
 
 #define check_offset(v, field, expected) assert_equal((int)&v->field - (int)v, expected)
 
+void testObjectsSize()
+{
+    assert_equal(sizeof(MeltyLib::CharacterObject), 0xAFC);
+}
+
 void testCharacterObjectOffsets()
 {
     auto *chr = (MeltyLib::CharacterObject *)nullptr;
@@ -161,6 +166,7 @@ void testActionsValues()
 }
 
 int main() {
+    testObjectsSize();
     testCharacterObjectOffsets();
     testActionsValues();
     return 0;
