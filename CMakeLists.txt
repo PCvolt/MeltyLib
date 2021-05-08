@@ -11,11 +11,11 @@ add_library(
         src/Address.h
         src/Character.cpp
         src/MeltyLib.h
-)
+        src/ComboInfo.h src/ComboInfo.cpp)
 
 add_executable(
         MeltyLib_tests
         tests/main.cpp
-)
+        )
 target_include_directories(MeltyLib_tests PRIVATE src)
 target_link_libraries(MeltyLib_tests MeltyLib)

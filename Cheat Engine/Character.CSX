@@ -2956,7 +2956,7 @@
       <Element Offset="824" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000338" DisplayMethod="Unsigned Integer"/>
       <Element Offset="828" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000033C" DisplayMethod="Hexadecimal"/>
       <Element Offset="836" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000344" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="852" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000354" Description="attacksSum" DisplayMethod="Hexadecimal"/>
+      <Element Offset="852" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000354" Description="attacksNormalsSum" DisplayMethod="Hexadecimal"/>
       <Element Offset="856" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000358" Description="u_superInputs" DisplayMethod="Hexadecimal"/>
       <Element Offset="860" Vartype="Byte" Bytesize="1" OffsetHex="0000035C" Description="specialInputs" DisplayMethod="Hexadecimal"/>
       <Element Offset="861" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="0000035D" DisplayMethod="Hexadecimal"/>
@@ -2965,9 +2965,10 @@
       <Element Offset="876" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000036C" Description="u_Dspecials" DisplayMethod="Hexadecimal"/>
       <Element Offset="880" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000370" DisplayMethod="Hexadecimal"/>
       <Element Offset="888" Vartype="4 Bytes" Bytesize="4" RLECount="24" OffsetHex="00000378" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="984" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003D8" DisplayMethod="Signed Integer"/>
-      <Element Offset="992" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003E0" Description="nbChainedAttacks" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="996" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003E4" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="984" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003D8" Description="inputCommandId" DisplayMethod="Signed Integer"/>
+      <Element Offset="988" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003DC" DisplayMethod="Signed Integer"/>
+      <Element Offset="992" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003E0" Description="chainedAttacksCounter" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="996" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003E4" Description="u_attacksStart" DisplayMethod="Unsigned Integer"/>
       <Element Offset="1000" Vartype="2 Bytes" Bytesize="2" OffsetHex="000003E8" Description="nbInputsMvt" DisplayMethod="Signed Integer"/>
       <Element Offset="1002" Vartype="2 Bytes" Bytesize="2" OffsetHex="000003EA" Description="historyStartMvt" DisplayMethod="Signed Integer"/>
       <Element Offset="1004" Vartype="2 Bytes" Bytesize="2" RLECount="5" OffsetHex="000003EC" DisplayMethod="Unsigned Integer"/>

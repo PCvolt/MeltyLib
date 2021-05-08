@@ -8,5 +8,6 @@
 #include "Action.h"
 #include "Address.h"
 #include "Character.h"
+#include "ComboInfo.h"
 
 #endif //MELTYLIB_MELTYLIB_H

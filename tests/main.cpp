@@ -4,7 +4,7 @@
 #define assert_equal(value1, value2) if ((value1) != (value2)) \
     std::cout << "Assertion failed. File " << __FILE__ \
               << " line " << __LINE__ << " in function " << __FUNCTION__ << ": "\
-              << #value1 << " is " << value1 << " but was expected to be " << value2 << "(" << #value2 << ")" << std::endl\
+              << #value1 << " is offset " << value1 << " in the struct but was expected to be " << value2 << "(" << #value2 << ")" << std::endl\
 
 #define check_offset(v, field, expected) assert_equal((int)&v->field - (int)v, expected)
 
@@ -89,6 +89,8 @@ void testCharacterObjectOffsets()
 
     check_offset(chr, timeSpentInSequence, 0x334);
 
+    check_offset(chr, inputCommandId, 0x3D8);
+
     check_offset(chr, nbChainedAttacks, 0x3E0);
 
     check_offset(chr, nbInputsMvt, 0x3E8);
@@ -103,6 +105,34 @@ void testCharacterObjectOffsets()
     check_offset(chr, inputsHistoryD, 0x7F2);
     check_offset(chr, nbInputsABC, 0x8F2);
     check_offset(chr, inputsHistoryABC, 0x8F4);
+}
+
+void testComboInfoOffsets()
+{
+    auto *comboInfo = (MeltyLib::ComboInfo *)nullptr;
+    check_offset(comboInfo, totalHits, 0x0);
+    check_offset(comboInfo, maxLengthThisReset, 0x4);
+
+    check_offset(comboInfo, maxLength, 0xC);
+    check_offset(comboInfo, maxDamage, 0x10);
+    check_offset(comboInfo, maxCombo, 0x14);
+
+    check_offset(comboInfo, length, 0x2C);
+    check_offset(comboInfo, lengthToo, 0x30);
+    check_offset(comboInfo, damage, 0x34);
+    check_offset(comboInfo, rawDamage, 0x38);
+    check_offset(comboInfo, redDamage, 0x3C);
+
+    check_offset(comboInfo, length2, 0x44);
+    check_offset(comboInfo, lengthToo2, 0x48);
+    check_offset(comboInfo, damage2, 0x4C);
+    check_offset(comboInfo, rawDamage2, 0x50);
+    check_offset(comboInfo, redDamage2, 0x54);
+
+    check_offset(comboInfo, firstComboLength, 0x60);
+    check_offset(comboInfo, firstComboDamage, 0x64);
+
+    check_offset(comboInfo, correctionValue, 0x6C);
 }
 
 void testActionsValues()
@@ -168,6 +198,7 @@ void testActionsValues()
 int main() {
     testObjectsSize();
     testCharacterObjectOffsets();
+    testComboInfoOffsets();
     testActionsValues();
     return 0;
 }

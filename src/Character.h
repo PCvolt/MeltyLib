@@ -5,7 +5,6 @@
 #ifndef MELTYLIB_CHARACTER_H
 #define MELTYLIB_CHARACTER_H
 
-#include <cstdint>
 #include "Action.h"
 
 namespace MeltyLib {
@@ -147,7 +146,10 @@ namespace MeltyLib {
         char pad18[8];
 
         int timeSpentInSequence; //0x334
-        char pad19[168];
+        char pad19[160];
+
+        int inputCommandId; //0x3D8
+        char pad195[4];
 
         int nbChainedAttacks; //0x3E0
         char pad20[4];
