@@ -22,6 +22,7 @@ enum Action : unsigned int {
     ACTION_STAND2CROUCH,
     ACTION_CROUCH,
     ACTION_CROUCH2STAND,
+    ACTION_TURNAROUND,
 
     ACTION_STANDBLOCK = 17,
     ACTION_CROUCHBLOCK,
@@ -42,6 +43,7 @@ enum Action : unsigned int {
     ACTION_dj8,
     ACTION_dj7,
 
+    // Not universal from this point onward
     ACTION_AIRDASH = 43,
     ACTION_AIRBACKDASH,
     ACTION_DODGE,

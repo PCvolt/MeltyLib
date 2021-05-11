@@ -134,8 +134,10 @@ namespace MeltyLib {
         char pad16[8];
 
         int spriteRotation; //0x300 type?
-        char pad17[16];
+        char pad17[8];
 
+        short inputEvent; //0x30C
+        char pad174[6];
         char facingLeftFlag; //0x314
         char pad175[3];
         int stanceFlag; //0x318 type?

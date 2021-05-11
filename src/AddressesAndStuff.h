@@ -58,6 +58,28 @@ in_EAX + 0x324 sprite ?
  - Macro
  - Fix dummy "block first attack"
 
+// SELECTORS
+
+ Cursor in function 0x4298b0 at (param_1[0x10]
+
+Selectors are in function of address 0x42f780, at (param_1 + 0x58).
+ Once you quit their respective menus, they are destroyed and there is garbage value in it.
+
+ 435c878
+
+
+ 168
+ 240
+ 480
+ 360
+ 360
+
+
+
+
+
+
+
 Hime initializes a partner (Arcueid) just for her loss animation.
 
  SHIELD BEHAVIOUR

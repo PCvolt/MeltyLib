@@ -78,7 +78,7 @@ void testCharacterObjectOffsets()
 
     check_offset(chr, spriteRotation, 0x300);
 
-    check_offset(chr, facingLeftFlag, 0x314);
+    check_offset(chr, inputEvent, 0x30C);
 
     check_offset(chr, facingLeftFlag, 0x314);
     check_offset(chr, stanceFlag, 0x318);
@@ -153,6 +153,8 @@ void testActionsValues()
     assert_equal(ACTION_STAND2CROUCH, 12);
     assert_equal(ACTION_CROUCH, 13);
     assert_equal(ACTION_CROUCH2STAND, 14);
+    assert_equal(ACTION_TURNAROUND, 15);
+
     assert_equal(ACTION_STANDBLOCK, 17);
     assert_equal(ACTION_CROUCHBLOCK, 18);
     assert_equal(ACTION_AIRBLOCK, 19);
@@ -200,5 +202,6 @@ int main() {
     testCharacterObjectOffsets();
     testComboInfoOffsets();
     testActionsValues();
+
     return 0;
 }
