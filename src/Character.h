@@ -113,8 +113,10 @@ namespace MeltyLib {
 
         char u_deathFlag; //0x177
         int u_attackActives; //0x178
-        char pad11[12];
+        char pad11[10];
 
+        char timeNotThrowable; //0x186
+        char wakeupFlag; //0x187
         int u_timeSpentAirborne; //0x188 hex
         char pad12[24];
 
