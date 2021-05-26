@@ -1,3 +1,9 @@
+#include <Windows.h>
+#include <conio.h>
+#include <tlhelp32.h>
+#include <string>
+#include <psapi.h>
+
 #include <iostream>
 #include <MeltyLib.h>
 

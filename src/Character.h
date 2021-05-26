@@ -53,7 +53,7 @@ namespace MeltyLib {
     #pragma deprecated(AKIHA_GIANT)
 
     struct InputsHistory {
-        bool isPressed;
+        short buttonPressed;
         short duration;
     };
 
@@ -128,7 +128,7 @@ namespace MeltyLib {
         char pad14[24];
 
         int inputDirection; //0x2E8 hex
-        int inputButtons; //0x2EC hex
+        int inputButtons; //0x2EC hex //Contains triggered buttons on first byte and held buttons on second
         char pad15[4];
         int u_nbCommandsEntered; //0x2F4
         char pad16[8];

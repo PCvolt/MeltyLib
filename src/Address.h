@@ -34,11 +34,28 @@ namespace MeltyLib
 
         ADDR_CAMERA_NEXT_X = 0x555124,
         ADDR_CAMERA_NEXT_Y = 0x555128,
-
         ADDR_CAMERA_DIFF_X = 0x5585E8,
         ADDR_CAMERA_DIFF_Y = 0x5585EC,
         ADDR_CAMERA_DIFF_Z = 0x5585F0,
         ADDR_COUNTERHIT_MODE = 0x77C210, //0 to 4
+
+        ADDR_SELECTED_STAGE = 0x74FD98,
+        ADDR_PREVIOUS_SELECTED_STAGE = 0x76E988,
+
+        ADDR_HUD_NOT_DISPLAYED = 0x5545f1,
+
+        ADDR_TIMER_DISPLAY_REVERSEBEAT_C1 = 0x55531C,
+        ADDR_TIMER_DISPLAY_REVERSEBEAT_C2 = 0x555E18, //0xAFC difference
+        ADDR_TIMER_DISPLAY_COUNTERHIT_C1 = 0x557FBC,
+        ADDR_TIMER_DISPLAY_COUNTERHIT_C2 = 0x5581C8,
+        ADDR_CAMERA_FOLLOW_MODE = 0x559546, //255 = normal, 0/1 = no care for sprize size, 2 = no care for characters
+        ADDR_CAMERA_SCALE_Y = 0x77C06C,
+        ADDR_CAMERA_SCALE_Z = 0x77C094,
+
+        ADDR_CAMERA_SCALE_X = 0x77C158,
+
+        //MENU
+        // 74d7fc] +10] +0] +0
     };
 }
 

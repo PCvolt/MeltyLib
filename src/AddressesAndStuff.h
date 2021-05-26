@@ -41,9 +41,6 @@ in_EAX + 0x324 sprite ?
  54EB70: zoom 1
  54EB74: zoom 2
  54EB78: scale
- 55DEC4: camera X
- 55DEC8: camera Y
-
  564B14: camera X
  564B18: camera Y
 
@@ -57,6 +54,7 @@ in_EAX + 0x324 sprite ?
  - Framestep
  - Macro
  - Fix dummy "block first attack"
+ - Winning in training mode make you lose any control
 
 // SELECTORS
 

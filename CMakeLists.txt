@@ -10,8 +10,9 @@ add_library(
         src/Character.h
         src/Address.h
         src/Character.cpp
+        src/Stage.h
         src/MeltyLib.h
-        src/ComboInfo.h src/ComboInfo.cpp)
+        src/ComboInfo.h src/ComboInfo.cpp src/Stage.h)
 
 add_executable(
         MeltyLib_tests

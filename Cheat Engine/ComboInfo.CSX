@@ -22,8 +22,7 @@
       <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="dmg2" DisplayMethod="Unsigned Integer"/>
       <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="rawDmg2" DisplayMethod="Unsigned Integer"/>
       <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="redDmg2" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" DisplayMethod="Unsigned Integer"/>
-      <Element Offset="93" Vartype="Byte" Bytesize="1" OffsetHex="0000005D" DisplayMethod="Unsigned Integer"/>
+      <Element Offset="88" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000058" DisplayMethod="Unsigned Integer"/>
       <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="firstComboLength" DisplayMethod="Unsigned Integer"/>
       <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="firstComboDmg" DisplayMethod="Unsigned Integer"/>
       <Element Offset="104" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000068" DisplayMethod="Hexadecimal"/>
