@@ -28,6 +28,8 @@ enum Action : unsigned int {
     ACTION_CROUCHBLOCK,
     ACTION_AIRBLOCK,
 
+    ACTION_LANDING = 20, //double check
+
     ACTION_HIT_AIR = 26,
     ACTION_AIRTECH = 28,
     ACTION_SWEPT,
