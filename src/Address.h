@@ -8,6 +8,7 @@
 namespace MeltyLib
 {
     enum Address {
+        ADDR_CALL_UPDATE_GAME = 0x4337AB, //temporary
         ADDR_CHARACTER_1 = 0x555130,
         ADDR_CHARACTER_2 = 0x555C2C,
         ADDR_CHARACTER_3 = 0x556728,
@@ -52,7 +53,7 @@ namespace MeltyLib
         ADDR_CAMERA_SCALE_Y = 0x77C06C,
         ADDR_CAMERA_SCALE_Z = 0x77C094,
 
-        ADDR_CAMERA_SCALE_X = 0x77C158,
+        ADDR_CAMERA_SCALE_X = 0x77C158
 
         //MENU
         // 74d7fc] +10] +0] +0
