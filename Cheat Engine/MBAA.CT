@@ -1874,7 +1874,7 @@
         <Element Offset="420" Vartype="Byte" Bytesize="1" OffsetHex="000001A4" Description="hitstop" DisplayMethod="Unsigned Integer"/>
         <Element Offset="424" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001A8" Description="u_hitstunCountUp" DisplayMethod="Unsigned Integer"/>
         <Element Offset="428" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001AC" Description="hitstunOnGround" DisplayMethod="Signed Integer"/>
-        <Element Offset="432" Vartype="2 Bytes" Bytesize="2" OffsetHex="000001B0" Description="u_hitstunFlags" DisplayMethod="Hexadecimal"/>
+        <Element Offset="432" Vartype="2 Bytes" Bytesize="2" OffsetHex="000001B0" Description="knockdownFlag" DisplayMethod="Hexadecimal"/>
         <Element Offset="434" Vartype="Byte" Bytesize="1" OffsetHex="000001B2" Description="u_hitstunFlag2" DisplayMethod="Unsigned Integer"/>
         <Element Offset="435" Vartype="Byte" Bytesize="1" OffsetHex="000001B3" DisplayMethod="Hexadecimal"/>
         <Element Offset="436" Vartype="2 Bytes" Bytesize="2" OffsetHex="000001B4" DisplayMethod="Unsigned Integer"/>

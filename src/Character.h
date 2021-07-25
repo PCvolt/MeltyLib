@@ -123,8 +123,10 @@ namespace MeltyLib {
         int hitstop;//0x1A4
         int hitstunCountUp; //0x1A8
         int hitstunOnGround; //0x1AC
-        int u_hitstunFlags; //0x1B0
-        char pad13[280];
+        int knockdownFlag; //0x1B0
+        char pad125;
+        char u_hitstunFlag2;
+        char pad13[278];
 
         CharacterObject *pItselfPlus0x4; //0x2CC
         char pad14[24];
