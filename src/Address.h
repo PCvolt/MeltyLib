@@ -19,7 +19,6 @@ namespace MeltyLib
         ADDR_CAMERA_POS_COMPUTE = 0x44ba40,
         ADDR_CAMERA_ZOOM_COMPUTE = 0x44bcb0,
 
-        ADDR_REAL_TIMER = 0x562A40,
         ADDR_WORLD_TIMER = 0x55D1D4,
         ADDR_PAUSE_FLAG = 0x55d203,
 
