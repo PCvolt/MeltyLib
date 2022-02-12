@@ -50,7 +50,7 @@ namespace MeltyLib {
         RANDOM_SELECT = 99
     };
 
-    #pragma deprecated(AKIHA_GIANT)
+#pragma deprecated(AKIHA_GIANT)
 
     struct InputsHistory {
         short buttonPressed;
@@ -58,8 +58,8 @@ namespace MeltyLib {
     };
 
 
-    struct CharacterObject { //size: 0xAFC
-        int isInitialized; //0x00
+    struct CharacterSubObject { //size: 0xAFC
+        //int isInitialized; //0x00
         int u_characterAndPlayer;
         int u_paletteAndPlayer;
         int moon;
@@ -128,7 +128,7 @@ namespace MeltyLib {
         char u_hitstunFlag2;
         char pad13[278];
 
-        CharacterObject *pItselfPlus0x4; //0x2CC
+        CharacterSubObject *pItselfCSO; //0x2CC
         char pad14[24];
 
         int inputDirection; //0x2E8 hex
@@ -148,7 +148,7 @@ namespace MeltyLib {
         int *pCurrentSequence; //0x31C type?
         int *currentTexture; //0x320 type?
         int u_attackActives2; //0x324
-        CharacterObject *pItself; //0x328
+        struct CharacterObject *pItselfCO; //0x328
         char pad18[8];
 
         int timeSpentInSequence; //0x334
@@ -173,6 +173,12 @@ namespace MeltyLib {
         short nbInputsABC; //0x8F2
         InputsHistory inputsHistoryABC[64]; //0x8F4
         char padEnd[264]; //0xAF8 - 0x9F4
+    };
+
+    struct CharacterObject
+    {
+        int isInitialized; //0x00
+        CharacterSubObject CSO;
     };
 
     extern CharacterObject &character1;
