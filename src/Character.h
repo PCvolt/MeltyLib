@@ -58,7 +58,7 @@ namespace MeltyLib {
     };
 
 
-    struct CharacterSubObject { //size: 0xAFC
+    struct CharacterSubObject { //size: 0xAFC - 0x4 (every member found is offset by 0x4, due to CharObj being a nested struct)
         //int isInitialized; //0x00
         int u_characterAndPlayer;
         int u_paletteAndPlayer;
