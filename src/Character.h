@@ -60,9 +60,15 @@ namespace MeltyLib {
 
     struct CharacterSubObject { //size: 0xAFC - 0x4 (every member found is offset by 0x4, due to CharObj being a nested struct)
         //int isInitialized; //0x00
-        int u_characterAndPlayer;
-        int u_paletteAndPlayer;
+        char graphicAssetsIndex;
+        char character;
+        char u_characterAgain;
+        char team;
+        char player;
+        char pad[1];
+        short palette;
         int moon;
+
         Action action;
         int animCounter;
         int spriteCounter;
@@ -77,8 +83,9 @@ namespace MeltyLib {
         int u_10IfInHitstun; //0x6C
         char pad3[64];
 
-        int u_ExGuardFlag; //0xB0
-        char pad4[8];
+        int ExGuardFlag; //0xB0
+        int timeHoldingBack;
+        char pad4[4];
 
         // Resources offsets
         int health; //0xBC
@@ -93,11 +100,14 @@ namespace MeltyLib {
         char pad6[4];
 
         int meter; //0xE0
-        int heatTime; //0xE4
-        char pad7[8];
+        int heat; //0xE4
+        int heatMode; //0xE8
+        char pad7[4];
 
-        int u_frameCount; //F0
-        char pad8[20];
+        int u_frameCount; //0xF0
+        char pad8[12];
+        short brokenCircuitTimer; //0x100
+        char pad85[6];
 
         // Movement offsets
         int xPosNext; //0x108
@@ -109,16 +119,42 @@ namespace MeltyLib {
         int yVel;
         short xAcceleration;
         short yAcceleration; //0x126
-        char pad10[79];
+        char pad10[68];
 
+        char shieldHeldTime; //0x16C
+        char pad101[3];
+        char shieldType; //0x170
+        char pad102[1];
+        short stopFrames; //0x172
+        char pad103[2];
+
+        char u_throwFlag; //0x176
         char u_deathFlag; //0x177
-        int u_attackActives; //0x178
-        char pad11[10];
+        char u_activeMeleeAttack; //0x178
+        char pad11[1];
+        char isWhiffing; //0x17A
+        char pad111[1];
+        char willDefend; //0x17C
+        char pad112[1];
+        char hardBounces; //0x17E
+        char pad113[1];
+        char u_softOTG; //0x180
+        char jumpCancel; //0x181
+        char u_thrown; //0x182
+        char pad114[3];
 
         char timeNotThrowable; //0x186
-        char wakeupFlag; //0x187
-        int u_timeSpentAirborne; //0x188 hex
-        char pad12[24];
+        char wakeupFlag; //0x187 //not reliable on crossups
+        char prejump; //0x188
+        char pad115[1];
+        char timeSpentAirborne; //0x18A
+        char pad116[1];
+        char timeThrown; //0x18C
+        char pad12[12];
+
+        short reversedControlsTimer; //0x19A
+        short unknownTimer;
+        char pad121[6];
 
         int hitstop;//0x1A4
         int hitstunCountUp; //0x1A8
@@ -129,21 +165,28 @@ namespace MeltyLib {
         char pad13[278];
 
         CharacterSubObject *pItselfCSO; //0x2CC
-        char pad14[24];
+        char pad14[26];
 
-        int inputDirection; //0x2E8 hex
-        int inputButtons; //0x2EC hex //Contains triggered buttons on first byte and held buttons on second
-        char pad15[4];
-        int u_nbCommandsEntered; //0x2F4
+        char inputDirectionCorrected; //0x2EA
+        char inputDirectionRaw; //0x2EB
+        char buttonsJustPressed; //0x2EC
+        char buttonsPressed; //0x2ED
+        char macroPressed; //0x2EE
+        char pad141[1];
+        int buttonsReleased; //0x2F0
+        char teamImmunity; //0x2F4
+        char pad15[1];
+        short u_nbCommandsEntered; //0x2F6
         char pad16[8];
 
-        int spriteRotation; //0x300 type?
-        char pad17[8];
-
+        int spriteRotation; //0x300
+        int xScale; //0x304
+        int yScale; //0x308
         short inputEvent; //0x30C
         char pad174[6];
         char facingLeftFlag; //0x314
-        char pad175[3];
+        char opponentIsLeftToMe; //0x315
+        char pad175[2];
         int stanceFlag; //0x318 type?
         int *pCurrentSequence; //0x31C type?
         int *currentTexture; //0x320 type?

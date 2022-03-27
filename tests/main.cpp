@@ -25,8 +25,13 @@ void testCharacterObjectOffsets()
     auto *cso = (MeltyLib::CharacterSubObject *)nullptr;
 
     check_offset(chr, isInitialized, 0x0);
-    check_offset(cso, u_characterAndPlayer, 0x0);
-    check_offset(cso, u_paletteAndPlayer, 0x4);
+
+    check_offset(cso, graphicAssetsIndex, 0x0);
+    check_offset(cso, character, 0x1);
+    check_offset(cso, u_characterAgain, 0x2);
+    check_offset(cso, team, 0x3);
+    check_offset(cso, player, 0x4);
+    check_offset(cso, palette, 0x6);
     check_offset(cso, moon, 0x8);
 
     check_offset(cso, action, 0xC);
@@ -40,7 +45,8 @@ void testCharacterObjectOffsets()
     check_offset(cso, u_frameCountWeird, 0x64);
     check_offset(cso, u_10IfInHitstun, 0x68);
 
-    check_offset(cso, u_ExGuardFlag, 0xAC);
+    check_offset(cso, ExGuardFlag, 0xAC);
+    check_offset(cso, timeHoldingBack, 0xB0);
 
     check_offset(cso, health, 0xB8);
     check_offset(cso, redHealth, 0xBC);
@@ -52,9 +58,12 @@ void testCharacterObjectOffsets()
     check_offset(cso, guardGaugeQuality, 0xD4);
 
     check_offset(cso, meter, 0xDC);
-    check_offset(cso, heatTime, 0xE0);
+    check_offset(cso, heat, 0xE0);
+    check_offset(cso, heatMode, 0xE4);
 
     check_offset(cso, u_frameCount, 0xEC);
+
+    check_offset(cso, brokenCircuitTimer, 0xFC);
 
     check_offset(cso, xPosNext, 0x104);
     check_offset(cso, yPosNext, 0x108);
@@ -66,10 +75,30 @@ void testCharacterObjectOffsets()
     check_offset(cso, xAcceleration, 0x120);
     check_offset(cso, yAcceleration, 0x122);
 
-    check_offset(cso, u_deathFlag, 0x173);
-    check_offset(cso, u_attackActives, 0x174);
+    check_offset(cso, shieldHeldTime, 0x168);
+    check_offset(cso, shieldType, 0x16C);
+    check_offset(cso, stopFrames, 0x16E);
 
-    check_offset(cso, u_timeSpentAirborne, 0x184);
+    check_offset(cso, u_throwFlag, 0x172);
+    check_offset(cso, u_deathFlag, 0x173);
+    check_offset(cso, u_activeMeleeAttack, 0x174);
+
+    check_offset(cso, isWhiffing, 0x176);
+    check_offset(cso, willDefend, 0x178);
+    check_offset(cso, hardBounces, 0x17A);
+
+    check_offset(cso, u_softOTG, 0x17C);
+    check_offset(cso, jumpCancel, 0x17D);
+    check_offset(cso, u_thrown, 0x17E);
+
+    check_offset(cso, timeNotThrowable, 0x182);
+    check_offset(cso, wakeupFlag, 0x183);
+    check_offset(cso, prejump, 0x184);
+    check_offset(cso, timeSpentAirborne, 0x186);
+
+    check_offset(cso, timeThrown, 0x188);
+
+    check_offset(cso, reversedControlsTimer, 0x196);
 
     check_offset(cso, hitstop, 0x1A0);
     check_offset(cso, hitstunCountUp, 0x1A4);
@@ -78,16 +107,25 @@ void testCharacterObjectOffsets()
 
     check_offset(cso, pItselfCSO, 0x2C8);
 
-    check_offset(cso, inputDirection, 0x2E4);
-    check_offset(cso, inputButtons, 0x2E8);
+    check_offset(cso, inputDirectionCorrected, 0x2E6);
+    check_offset(cso, inputDirectionRaw, 0x2E7);
+    check_offset(cso, buttonsJustPressed, 0x2E8);
+    check_offset(cso, buttonsPressed, 0x2E9);
+    check_offset(cso, macroPressed, 0x2EA);
 
-    check_offset(cso, u_nbCommandsEntered, 0x2F0);
+    check_offset(cso, buttonsReleased, 0x2EC);
+
+    check_offset(cso, teamImmunity, 0x2F0);
+
+    check_offset(cso, u_nbCommandsEntered, 0x2F2);
 
     check_offset(cso, spriteRotation, 0x2FC);
-
+    check_offset(cso, xScale, 0x300);
+    check_offset(cso, yScale, 0x304);
     check_offset(cso, inputEvent, 0x308);
 
     check_offset(cso, facingLeftFlag, 0x310);
+    check_offset(cso, opponentIsLeftToMe, 0x311);
     check_offset(cso, stanceFlag, 0x314);
     check_offset(cso, pCurrentSequence, 0x318);
     check_offset(cso, currentTexture, 0x31C);
