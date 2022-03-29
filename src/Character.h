@@ -8,6 +8,17 @@
 #include "Action.h"
 
 namespace MeltyLib {
+    enum HeatMode : unsigned short {
+        NORMAL,
+        HEAT,
+        MAX,
+        BLODDHEAT,
+        UNKNOWN,
+        UNLIMITED
+    };
+
+#pragma deprecated(UNKNOWN)
+
     enum Character : unsigned short {
         SION,
         ARCUEID,

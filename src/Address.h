@@ -7,6 +7,14 @@
 
 namespace MeltyLib
 {
+    enum BattleMode {
+        VS_PLAYER = 0x1,
+        ARCADE = 0x10,
+        PLAYER_VS_CPU = 0x11,
+        CPU_VS_CPU = 0x12,
+        PRACTICE = 0x1010
+    };
+
     enum Address {
         ADDR_CALL_UPDATE_GAME = 0x4337AB, //temporary
         ADDR_CHARACTER_1 = 0x555130,
@@ -27,7 +35,7 @@ namespace MeltyLib
         //0x562A58
         //0x562A4C
         //0x562A6F
-        ADDR_WHICH_BATTLESCENE_FLAG = 0x562A74,
+        ADDR_BATTLEMODE = 0x562A74,
 
         ADDR_CAMERA_X = 0x55DEC4,
         ADDR_CAMERA_Y = 0x55DEC8,
