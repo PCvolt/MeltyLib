@@ -14,11 +14,11 @@ add_library(
         src/ComboInfo.h src/ComboInfo.cpp
         src/MeltyLib.h
         src/Stage.h
-)
+        src/CPauseMenu_NormalElement.h)
 
 add_executable(
         MeltyLib_tests
         tests/main.cpp
-        )
+        src/CPauseMenu_NormalElement.h)
 target_include_directories(MeltyLib_tests PRIVATE src)
 target_link_libraries(MeltyLib_tests MeltyLib)

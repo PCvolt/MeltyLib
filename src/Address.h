@@ -7,11 +7,38 @@
 
 namespace MeltyLib
 {
+    enum MenuIndex {//???
+        PRACTICE = 60,
+        OPTIONS = 84,
+        RANKINGS = 96,
+        MAIN = 108,
+        REPLAYS = 216,
+        NETWORK = 240
+    };
+
+    enum SceneIndex {
+        BATTLE = 1,
+        START_SCREEN = 2,
+        SPLASH = 3,
+        WIN_SCREEN = 5,
+        VERSUS_SCREEN = 8,
+        ARCADE_DIALOGUE = 9,
+        NEXT_STAGE = 10,
+        RANKINGS = 11,
+        OPTIONS = 12,
+        CHARACTER_SELECT = 20,
+        MAIN_MENU = 25,
+        NETWORK = 100
+    };
+
     enum BattleMode {
         VS_PLAYER = 0x1,
         ARCADE = 0x10,
         PLAYER_VS_CPU = 0x11,
         CPU_VS_CPU = 0x12,
+        UNKNOWN = 0x30,
+        UNKNOWN2 = 0x100,
+        UNKNOWN3 = 0x200,
         PRACTICE = 0x1010
     };
 
