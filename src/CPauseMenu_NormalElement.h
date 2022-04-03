@@ -5,7 +5,7 @@
 #ifndef MELTYLIB_CPAUSEMENU_NORMALELEMENT_H
 #define MELTYLIB_CPAUSEMENU_NORMALELEMENT_H
 
-struct CPauseMenu_NormalElement
+struct CPauseMenu_NormalElement //Size: 0x60
 {
     int* pDestructorFct();
     int elementType;
@@ -16,9 +16,11 @@ struct CPauseMenu_NormalElement
     int marginBottom;
     int textOpacity;
     char pad[4];
-    char displayedName[16];
+    char label[16];
     char pad2[16];
     char name[16];
+    char pad[8];
+    int selectionIndex;
 };
 
 #endif //MELTYLIB_CPAUSEMENU_NORMALELEMENT_H

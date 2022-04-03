@@ -23,9 +23,6 @@ in_EAX + 0x324 sprite ?
 
  451720 = practice mode ?
 
- 00555444 P1 facing right flag (byte)
- 0555D04 P2 Guard gauge quality (float)
-
  0054EEE8 game mode (1 practice mode, 20 chara select, (4 bytes)
  0074D900 moon selector (4 bytes)
  0074D904 color selector (4 bytes)
@@ -50,37 +47,19 @@ in_EAX + 0x324 sprite ?
  55D20B: intro state (byte)
  563948: outro state
 
- - In training mode, your inputs are not accepted on the first 6 frames when resetting.
- - If the macro starts by a jump, the dummy will always jump
  - Frame advantage
  - Hitbox viewer without slowdown
- - Framestep
  - Macro
+ - If the macro starts by a jump, the dummy will always jump
  - Fix dummy "block first attack"
  - Winning in training mode make you lose any control
 
-// SELECTORS
-
- Cursor in function 0x4298b0 at (param_1[0x10]
-
-Selectors are in function of address 0x42f780, at (param_1 + 0x58).
- Once you quit their respective menus, they are destroyed and there is garbage value in it.
 
  435c878
+*/
 
 
- 168
- 240
- 480
- 360
- 360
-
-
-
-
-
-
-
+/*
 Hime initializes a partner (Arcueid) just for her loss animation.
 
  SHIELD BEHAVIOUR
@@ -95,5 +74,4 @@ Hime initializes a partner (Arcueid) just for her loss animation.
  - dash 2D: 4.4% 22F
 
  F arc: 2D 10% 10F
-
  */

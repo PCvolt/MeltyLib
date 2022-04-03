@@ -7,7 +7,8 @@
 
 namespace MeltyLib
 {
-    enum MenuIndex {//???
+    enum MenuIndex {
+        UNK = 25, //ref at 0x478657
         PRACTICE = 60,
         OPTIONS = 84,
         RANKINGS = 96,
@@ -17,18 +18,18 @@ namespace MeltyLib
     };
 
     enum SceneIndex {
-        BATTLE = 1,
-        START_SCREEN = 2,
-        SPLASH = 3,
-        WIN_SCREEN = 5,
-        VERSUS_SCREEN = 8,
-        ARCADE_DIALOGUE = 9,
-        NEXT_STAGE = 10,
-        RANKINGS = 11,
-        OPTIONS = 12,
-        CHARACTER_SELECT = 20,
-        MAIN_MENU = 25,
-        NETWORK = 100
+        BATTLE_SCENE = 1,
+        START_SCREEN_SCENE = 2,
+        SPLASH_SCREEN_SCENE = 3,
+        WIN_SCREEN8SCENE = 5,
+        VERSUS_SCREEN_SCENE = 8,
+        ARCADE_DIALOGUE_SCENE = 9,
+        NEXT_STAGE_SCENE = 10,
+        RANKINGS_SCENE = 11,
+        OPTIONS_SCENE = 12,
+        CHARACTER_SELECT_SCENE = 20,
+        MAIN_MENU_SCENE = 25,
+        NETWORK_SCENE = 100
     };
 
     enum BattleMode {
@@ -39,7 +40,7 @@ namespace MeltyLib
         UNKNOWN = 0x30,
         UNKNOWN2 = 0x100,
         UNKNOWN3 = 0x200,
-        PRACTICE = 0x1010
+        PRACTICE_MODE = 0x1010
     };
 
     enum Address {
@@ -88,10 +89,13 @@ namespace MeltyLib
         ADDR_CAMERA_SCALE_Y = 0x77C06C,
         ADDR_CAMERA_SCALE_Z = 0x77C094,
 
-        ADDR_CAMERA_SCALE_X = 0x77C158
+        ADDR_CAMERA_SCALE_X = 0x77C158,
+        ADDR_D3DX9_DEVICE = 0x76e7d4,
 
         //MENU
-        // 74d7fc] +10] +0] +0
+        // 0x74d7fc + 10] + 0] + 0] = pTrainingMenu
+        // 0x76E6D4 + 10] + 0] + 0] = pMainMenu
+        // 0x76E98C + 10] + 0] + 0] = OptionsMenu
     };
 }
 
