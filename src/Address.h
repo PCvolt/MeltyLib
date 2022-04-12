@@ -43,6 +43,20 @@ namespace MeltyLib
         PRACTICE_MODE = 0x1010
     };
 
+    enum FunctionAddress {
+        ADDR_DRAW_CHARACTERS = 0x42388D,
+        ADDR_DRAW_EFFECTS1 = 0x423892,
+        ADDR_DRAW_EFFECTS2 = 0x423897,
+        ADDR_DRAW_HUDTEXT = 0x42389C,
+
+        //ADDR_DRAW_HUD = 0x4238A6, //Crashes if nooped
+        ADDR_DRAW_BACKGROUND = 0x4238C0,
+        ADDR_DRAW_BATTLEHUD = 0x42485B,
+        ADDR_DRAW_CHARACTERRESOURCES1 = 0x4249CD,
+        ADDR_DRAW_CHARACTERRESOURCESTEXT = 0x4249F7,
+        ADDR_DRAW_CHARACTERRESOURCES2 = 0x424B9D
+    };
+
     enum Address {
         ADDR_CALL_UPDATE_GAME = 0x4337AB, //temporary
         ADDR_CHARACTER_1 = 0x555130,
@@ -65,6 +79,7 @@ namespace MeltyLib
         //0x562A6F
         ADDR_BATTLEMODE = 0x562A74,
 
+        ADDR_NEWSCENEFLAG = 0x55DEC3,
         ADDR_CAMERA_X = 0x55DEC4,
         ADDR_CAMERA_Y = 0x55DEC8,
         ADDR_CAMERA_Z = 0x55DECC,
@@ -91,6 +106,7 @@ namespace MeltyLib
 
         ADDR_CAMERA_SCALE_X = 0x77C158,
         ADDR_D3DX9_DEVICE = 0x76e7d4,
+
 
         //MENU
         // 0x74d7fc + 10] + 0] + 0] = pTrainingMenu

@@ -5,7 +5,18 @@
 #ifndef MELTYLIB_CPAUSEMENU_NORMALELEMENT_H
 #define MELTYLIB_CPAUSEMENU_NORMALELEMENT_H
 
-struct CPauseMenu_NormalElement //Size: 0x60
+// 0x78 size of TrainingMenu
+// 0x58 NormalElement size
+// 0x80 SelectElement size
+// 0x70 size of RecordingSlot
+// 0x3C SelectedElement size
+
+// 0x534f8A for spaceElement
+/*
+ * 53604C is the class address from which it does new (NormalElement)
+ *
+ * */
+struct CPauseMenu_NormalElement
 {
     int* pDestructorFct();
     int elementType;
@@ -19,7 +30,7 @@ struct CPauseMenu_NormalElement //Size: 0x60
     char label[16];
     char pad2[16];
     char name[16];
-    char pad[8];
+    char pad3[8];
     int selectionIndex;
 };
 
