@@ -5,7 +5,9 @@
 #ifndef MELTYLIB_CPAUSEMENU_NORMALELEMENT_H
 #define MELTYLIB_CPAUSEMENU_NORMALELEMENT_H
 
+// 0xE8 size of GameMenuManager of TrainingMenu
 // 0x78 size of TrainingMenu
+// 0x?? SpaceElement size
 // 0x58 NormalElement size
 // 0x80 SelectElement size
 // 0x70 size of RecordingSlot

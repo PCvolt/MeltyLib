@@ -20,15 +20,17 @@ namespace MeltyLib
     enum SceneIndex {
         BATTLE_SCENE = 1,
         START_SCREEN_SCENE = 2,
-        SPLASH_SCREEN_SCENE = 3,
+        LOGO_SCREEN_SCENE = 3,
         WIN_SCREEN8SCENE = 5,
         VERSUS_SCREEN_SCENE = 8,
         ARCADE_DIALOGUE_SCENE = 9,
         NEXT_STAGE_SCENE = 10,
         RANKINGS_SCENE = 11,
         OPTIONS_SCENE = 12,
+        VERSUS_INTRO = 13,
         CHARACTER_SELECT_SCENE = 20,
         MAIN_MENU_SCENE = 25,
+        REPLAYS_SCENE = 26,
         NETWORK_SCENE = 100
     };
 

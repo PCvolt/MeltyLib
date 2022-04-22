@@ -34,6 +34,7 @@ in_EAX + 0x324 sprite ?
 
  0055D203 pause flag (byte)
  00562A64 training mode paused (4 bytes)
+ 0x774974 GameState pointer (4 bytes)
  0x767440 menu state counter (4 bytes)
 
  54D048

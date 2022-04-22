@@ -63,11 +63,44 @@ namespace MeltyLib {
 
 #pragma deprecated(AKIHA_GIANT)
 
+    enum ShieldType : char {
+        NO_SHIELDTYPE,
+        NORMALSHIELD,
+        EXSHIELD
+    };
+
     struct InputsHistory {
         short buttonPressed;
         short duration;
     };
 
+    struct Box {
+        short x1;
+        short y1;
+        short x2;
+        short y2;
+    };
+
+    struct Texture { //size 0x54
+        char pad[2];
+        char spriteIndex;
+        char u_assetsIndex;
+        int xOffset;
+        int yOffset;
+        char pad1[12];
+        char red;
+        char green;
+        char blue;
+        char pad2[2];
+        char pad3[20];
+        float xScale;
+        float yScale;
+        char pad4[10];
+        char hitboxCount;
+        char pad5[5];
+        Box *collisionAndHurtboxList;
+        Box *meleeHitboxesList;
+    };
 
     struct CharacterSubObject { //size: 0xAFC - 0x4 (every member found is offset by 0x4, due to CharObj being a nested struct)
         //int isInitialized; //0x00
@@ -200,7 +233,7 @@ namespace MeltyLib {
         char pad175[2];
         int stanceFlag; //0x318 type?
         int *pCurrentSequence; //0x31C type?
-        int *currentTexture; //0x320 type?
+        int *currentTexture; //0x320 type Texture size 0x54, array
         int u_attackActives2; //0x324
         struct CharacterObject *pItselfCO; //0x328
         char pad18[8];
