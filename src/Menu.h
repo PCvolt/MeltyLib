@@ -55,13 +55,30 @@ namespace MeltyLib {
         // probably more fields
     };
 
+    struct MenuSet {
+        void *vftable();
+
+        int *pMenu; //(Menu *), but Menu is the one to init MenuSet
+        char pad[60];
+        int currHoveredItemIndex;
+        int prevHoveredItemIndex;
+        char pad2[4];
+        MenuElement *pElementsList;
+        MenuElement *pElementsListEnd;
+        char pad3[20];
+        int hasFinishedDrawing;
+        int timeActive;
+        char pad4[4];
+        int willClose;
+    };
+
     struct Menu {
         void *vftable();
 
         int isMenuDisabled;
         int prevIsMenuDisabled;
         char pad[4];
-        int **ppMenuSet; //points towards MenuSet
+        MenuSet **ppMenuSet;
         char pad2[44];
         int backgroundXOffset;
         int yOffset;
@@ -94,23 +111,6 @@ namespace MeltyLib {
         Menu *pDummySettingsMenu;
         int hiddenMenuFlag;
         InformationMenu *pInformationMenu;
-    };
-
-    struct MenuSet {
-        void *vftable();
-
-        Menu *pMenu;
-        char pad[60];
-        int currHoveredItemIndex;
-        int prevHoveredItemIndex;
-        char pad2[4];
-        MenuElement *pElementsList;
-        MenuElement *pElementsListEnd;
-        char pad3[20];
-        int hasFinishedDrawing;
-        int timeActive;
-        char pad4[4];
-        int willClose;
     };
 }
 #endif //MELTYLIB_MENU_H
