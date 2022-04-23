@@ -102,6 +102,8 @@ namespace MeltyLib {
         Box *meleeHitboxesList;
     };
 
+    //FX array, size 0x33C, start at 0x67BDEC
+
     struct CharacterSubObject { //size: 0xAFC - 0x4 (every member found is offset by 0x4, due to CharObj being a nested struct)
         //int isInitialized; //0x00
         char graphicAssetsIndex;
@@ -264,7 +266,8 @@ namespace MeltyLib {
 
     struct CharacterObject
     {
-        int isInitialized; //0x00
+        char isInitialized; //0x00
+        char pad[3];
         CharacterSubObject CSO;
     };
 
