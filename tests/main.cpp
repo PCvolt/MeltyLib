@@ -14,9 +14,94 @@
 
 #define check_offset(v, field, expected) assert_equal((int)&v->field - (int)v, expected)
 
-void testObjectsSize()
+void testActionsValues()
 {
-    assert_equal(sizeof(MeltyLib::CharacterObject), 0xAFC);
+    using namespace MeltyLib;
+    assert_equal(ACTION_IDLE, 0);
+    assert_equal(ACTION_5A, 1);
+    assert_equal(ACTION_5B, 2);
+    assert_equal(ACTION_5C, 3);
+    assert_equal(ACTION_2A, 4);
+    assert_equal(ACTION_2B, 5);
+    assert_equal(ACTION_2C, 6);
+    assert_equal(ACTION_jA, 7);
+    assert_equal(ACTION_jB, 8);
+    assert_equal(ACTION_jC, 9);
+    assert_equal(ACTION_WALK, 10);
+    assert_equal(ACTION_BACKWALK, 11);
+    assert_equal(ACTION_STAND2CROUCH, 12);
+    assert_equal(ACTION_CROUCH, 13);
+    assert_equal(ACTION_CROUCH2STAND, 14);
+    assert_equal(ACTION_TURNAROUND, 15);
+
+    assert_equal(ACTION_STANDBLOCK, 17);
+    assert_equal(ACTION_CROUCHBLOCK, 18);
+    assert_equal(ACTION_AIRBLOCK, 19);
+    assert_equal(ACTION_HIT_AIR, 26);
+    assert_equal(ACTION_AIRTECH, 28);
+    assert_equal(ACTION_SWEPT, 29);
+    assert_equal(ACTION_HIT_LAUNCH, 30);
+    assert_equal(ACTION_GROUNDTECH, 31);
+    assert_equal(ACTION_WAKEUP_FACEDOWN, 32);
+    assert_equal(ACTION_WAKEUP_FACEUP, 33);
+    assert_equal(ACTION_j9, 35);
+    assert_equal(ACTION_j8, 36);
+    assert_equal(ACTION_j7, 37);
+    assert_equal(ACTION_dj9, 38);
+    assert_equal(ACTION_dj8, 39);
+    assert_equal(ACTION_dj7, 40);
+    assert_equal(ACTION_AIRDASH, 43);
+    assert_equal(ACTION_AIRBACKDASH, 44);
+    assert_equal(ACTION_DODGE, 45);
+    assert_equal(ACTION_SHIELD_HIGH, 54);
+    assert_equal(ACTION_SHIELD_LOW, 55);
+    assert_equal(ACTION_sj9, 58);
+    assert_equal(ACTION_DASH, 60);
+    assert_equal(ACTION_BACKDASH, 61);
+    assert_equal(ACTION_SHIELD_BUNKER, 96);
+    assert_equal(ACTION_HEAT, 260);
+    assert_equal(ACTION_CIRCUIT_SPARK, 262);
+    assert_equal(ACTION_AIR_CIRCUIT_SPARK, 263);
+    assert_equal(ACTION_AIRTHROW_ATTEMPT, 271);
+    assert_equal(ACTION_AIRTHROW_CONNECT, 273);
+    assert_equal(ACTION_THROW_TECH, 280);
+    assert_equal(ACTION_THROW_TECH_RECOVERY, 281);
+    assert_equal(ACTION_AIR_THROWN, 350);
+    assert_equal(HITSTUN_LIGHT_LEANBACK, 900);
+    assert_equal(HITSTUN_LIGHT_LEANFORWARD, 901);
+    assert_equal(HITSTUN_MEDIUM_LEANBACK, 903);
+    assert_equal(HITSTUN_MEDIUM_LEANFORWARD, 904);
+    assert_equal(HITSTUN_HEAVY_LEANBACK, 906);
+    assert_equal(HITSTUN_HEAVY_LEANFORWARD, 907);
+    assert_equal(HITSTUN_HEAVY_LEANANY, 907);
+}
+
+void testComboInfoOffsets()
+{
+    auto *comboInfo = (MeltyLib::ComboInfo *)nullptr;
+    check_offset(comboInfo, totalHits, 0x0);
+    check_offset(comboInfo, maxLengthThisReset, 0x4);
+
+    check_offset(comboInfo, maxLength, 0xC);
+    check_offset(comboInfo, maxDamage, 0x10);
+    check_offset(comboInfo, maxCombo, 0x14);
+
+    check_offset(comboInfo, length, 0x2C);
+    check_offset(comboInfo, lengthToo, 0x30);
+    check_offset(comboInfo, damage, 0x34);
+    check_offset(comboInfo, rawDamage, 0x38);
+    check_offset(comboInfo, redDamage, 0x3C);
+
+    check_offset(comboInfo, length2, 0x44);
+    check_offset(comboInfo, lengthToo2, 0x48);
+    check_offset(comboInfo, damage2, 0x4C);
+    check_offset(comboInfo, rawDamage2, 0x50);
+    check_offset(comboInfo, redDamage2, 0x54);
+
+    check_offset(comboInfo, firstComboLength, 0x60);
+    check_offset(comboInfo, firstComboDamage, 0x64);
+
+    check_offset(comboInfo, correctionValue, 0x6C);
 }
 
 void testCharacterObjectOffsets()
@@ -35,9 +120,10 @@ void testCharacterObjectOffsets()
     check_offset(cso, moon, 0x8);
 
     check_offset(cso, action, 0xC);
-    check_offset(cso, animCounter, 0x10);
-    check_offset(cso, spriteCounter, 0x14);
-    check_offset(cso, animSubcounter, 0x18);
+    check_offset(cso, spriteIndex, 0x10);
+    check_offset(cso, nextSpriteIndex, 0x14);
+    check_offset(cso, timePerSprite, 0x18);
+    check_offset(cso, spriteOrActionChange, 0x1C);
 
     check_offset(cso, u_perfect, 0x4C);
 
@@ -152,94 +238,92 @@ void testCharacterObjectOffsets()
     check_offset(cso, inputsHistoryABC, 0x8F0);
 }
 
-void testComboInfoOffsets()
+void testMenuElementOffset()
 {
-    auto *comboInfo = (MeltyLib::ComboInfo *)nullptr;
-    check_offset(comboInfo, totalHits, 0x0);
-    check_offset(comboInfo, maxLengthThisReset, 0x4);
+    auto *menuElement = (MeltyLib::MenuElement *)nullptr;
 
-    check_offset(comboInfo, maxLength, 0xC);
-    check_offset(comboInfo, maxDamage, 0x10);
-    check_offset(comboInfo, maxCombo, 0x14);
+    //check_offset(menuElement, vftable, 0x);
+    check_offset(menuElement, elementType, 0x4);
+    check_offset(menuElement, isHovered, 0x8);
+    check_offset(menuElement, canHover, 0xC);
+    check_offset(menuElement, timeHovered, 0x10);
+    check_offset(menuElement, timeNotHovered, 0x14);
+    check_offset(menuElement, marginBottom, 0x18);
+    check_offset(menuElement, textOpacity, 0x1C);
 
-    check_offset(comboInfo, length, 0x2C);
-    check_offset(comboInfo, lengthToo, 0x30);
-    check_offset(comboInfo, damage, 0x34);
-    check_offset(comboInfo, rawDamage, 0x38);
-    check_offset(comboInfo, redDamage, 0x3C);
+    check_offset(menuElement, label, 0x24);
 
-    check_offset(comboInfo, length2, 0x44);
-    check_offset(comboInfo, lengthToo2, 0x48);
-    check_offset(comboInfo, damage2, 0x4C);
-    check_offset(comboInfo, rawDamage2, 0x50);
-    check_offset(comboInfo, redDamage2, 0x54);
+    check_offset(menuElement, name, 0x40);
+    check_offset(menuElement, selectionIndex, 0x58);
+    check_offset(menuElement, selectedItemLabelXOffset, 0x5C);
 
-    check_offset(comboInfo, firstComboLength, 0x60);
-    check_offset(comboInfo, firstComboDamage, 0x64);
-
-    check_offset(comboInfo, correctionValue, 0x6C);
+    check_offset(menuElement, selectItemList, 0x64);
+    check_offset(menuElement, selectItemListEnd, 0x68);
 }
 
-void testActionsValues()
+void testMenuOffsets()
 {
-    using namespace MeltyLib;
-    assert_equal(ACTION_IDLE, 0);
-    assert_equal(ACTION_5A, 1);
-    assert_equal(ACTION_5B, 2);
-    assert_equal(ACTION_5C, 3);
-    assert_equal(ACTION_2A, 4);
-    assert_equal(ACTION_2B, 5);
-    assert_equal(ACTION_2C, 6);
-    assert_equal(ACTION_jA, 7);
-    assert_equal(ACTION_jB, 8);
-    assert_equal(ACTION_jC, 9);
-    assert_equal(ACTION_WALK, 10);
-    assert_equal(ACTION_BACKWALK, 11);
-    assert_equal(ACTION_STAND2CROUCH, 12);
-    assert_equal(ACTION_CROUCH, 13);
-    assert_equal(ACTION_CROUCH2STAND, 14);
-    assert_equal(ACTION_TURNAROUND, 15);
+    auto *menu = (MeltyLib::Menu *)nullptr;
 
-    assert_equal(ACTION_STANDBLOCK, 17);
-    assert_equal(ACTION_CROUCHBLOCK, 18);
-    assert_equal(ACTION_AIRBLOCK, 19);
-    assert_equal(ACTION_HIT_AIR, 26);
-    assert_equal(ACTION_AIRTECH, 28);
-    assert_equal(ACTION_SWEPT, 29);
-    assert_equal(ACTION_HIT_LAUNCH, 30);
-    assert_equal(ACTION_GROUNDTECH, 31);
-    assert_equal(ACTION_WAKEUP_FACEDOWN, 32);
-    assert_equal(ACTION_WAKEUP_FACEUP, 33);
-    assert_equal(ACTION_j9, 35);
-    assert_equal(ACTION_j8, 36);
-    assert_equal(ACTION_j7, 37);
-    assert_equal(ACTION_dj9, 38);
-    assert_equal(ACTION_dj8, 39);
-    assert_equal(ACTION_dj7, 40);
-    assert_equal(ACTION_AIRDASH, 43);
-    assert_equal(ACTION_AIRBACKDASH, 44);
-    assert_equal(ACTION_DODGE, 45);
-    assert_equal(ACTION_SHIELD_HIGH, 54);
-    assert_equal(ACTION_SHIELD_LOW, 55);
-    assert_equal(ACTION_sj9, 58);
-    assert_equal(ACTION_DASH, 60);
-    assert_equal(ACTION_BACKDASH, 61);
-    assert_equal(ACTION_SHIELD_BUNKER, 96);
-    assert_equal(ACTION_HEAT, 260);
-    assert_equal(ACTION_CIRCUIT_SPARK, 262);
-    assert_equal(ACTION_AIR_CIRCUIT_SPARK, 263);
-    assert_equal(ACTION_AIRTHROW_ATTEMPT, 271);
-    assert_equal(ACTION_AIRTHROW_CONNECT, 273);
-    assert_equal(ACTION_THROW_TECH, 280);
-    assert_equal(ACTION_THROW_TECH_RECOVERY, 281);
-    assert_equal(ACTION_AIR_THROWN, 350);
-    assert_equal(HITSTUN_LIGHT_LEANBACK, 900);
-    assert_equal(HITSTUN_LIGHT_LEANFORWARD, 901);
-    assert_equal(HITSTUN_MEDIUM_LEANBACK, 903);
-    assert_equal(HITSTUN_MEDIUM_LEANFORWARD, 904);
-    assert_equal(HITSTUN_HEAVY_LEANBACK, 906);
-    assert_equal(HITSTUN_HEAVY_LEANFORWARD, 907);
-    assert_equal(HITSTUN_HEAVY_LEANANY, 907);
+    //check_offset(menu, vftable, 0x0);
+    check_offset(menu, isMenuDisabled, 0x4);
+    check_offset(menu, prevIsMenuDisabled, 0x8);
+
+    check_offset(menu, backgroundXOffset, 0x40);
+    check_offset(menu, yOffset, 0x44);
+
+    check_offset(menu, xOffset, 0x4C);
+
+    check_offset(menu, label, 0x60);
+    check_offset(menu, isRootMenu, 0x7C);
+    check_offset(menu, timeOpened, 0x80);
+    check_offset(menu, openSubmenuIndex, 0x84);
+    check_offset(menu, timeSubmenuOpened, 0x88);
+    check_offset(menu, closeAnimProgression, 0x8C);
+    check_offset(menu, opacity, 0x90);
+    check_offset(menu, progressionRate, 0x94);
+    check_offset(menu, degressionRate, 0x98);
+    check_offset(menu, isBlurred, 0x9C);
+
+    check_offset(menu, isMenuBackgroundDisplayed, 0xA4);
+    check_offset(menu, u_layer, 0xA8);
+    check_offset(menu, paragraphMode, 0xAC);
+
+    check_offset(menu, xStretch, 0xB4);
+    check_offset(menu, yStretch, 0xB8);
+    check_offset(menu, isMenuLit, 0xBC);
+    check_offset(menu, dimScreenPercentage, 0xC0);
+    check_offset(menu, pYesNoMenu, 0xC4);
+    check_offset(menu, pBattleSettingsMenu, 0xC8);
+    check_offset(menu, pEnemyStatusMenu, 0xCC);
+    check_offset(menu, pTrainingDisplayMenu, 0xD0);
+    check_offset(menu, pDummySettingsMenu, 0xD4);
+    check_offset(menu, hiddenMenuFlag, 0xD8);
+    check_offset(menu, pInformationMenu, 0xDC);
+}
+
+void testMenuSetOffsets()
+{
+    auto *menuSet = (MeltyLib::MenuSet *)nullptr;
+
+    //check_offset(menuSet, vftable, 0x0);
+    check_offset(menuSet, pMenu, 0x4);
+
+    check_offset(menuSet, currHoveredItemIndex, 0x40);
+    check_offset(menuSet, prevHoveredItemIndex, 0x44);
+
+    check_offset(menuSet, pElementsList, 0x4C);
+    check_offset(menuSet, pElementsListEnd, 0x50);
+
+    check_offset(menuSet, hasFinishedDrawing, 0x68);
+    check_offset(menuSet, timeActive, 0x6C);
+
+    check_offset(menuSet, willClose, 0x74);
+}
+
+void testObjectsSize()
+{
+    assert_equal(sizeof(MeltyLib::CharacterObject), 0xAFC);
 }
 
 int main() {
@@ -247,6 +331,9 @@ int main() {
     testCharacterObjectOffsets();
     testComboInfoOffsets();
     testActionsValues();
+
+    testMenuSetOffsets();
+    testMenuOffsets();
 
     return 0;
 }

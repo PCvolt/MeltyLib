@@ -15,7 +15,6 @@ CSceneCharaSelect 0x535C50
 CGAME_MENU_ELEMENT, CGAME_MENU_NORMALELEMENT, CGAME_MENU_SELECTELEMENT, CGAME_MENU_SPACEELEMENT, CGAME_MENU_FOLDERELEMENT, CGAME_MENU_EXITELEMENT
 CPAUSEMENU: NORMAL_ELEMENT, SELECT_ELEMENT, SPACE_ELEMENT, FOLDER_ELEMENT, EXIT_ELEMENT
 
-in_EAX + 0x324 sprite ?
 
  462780: noop this function to get the funny results
 
@@ -47,14 +46,6 @@ in_EAX + 0x324 sprite ?
 
  55D20B: intro state (byte)
  563948: outro state
-
- - Frame advantage
- - Hitbox viewer without slowdown
- - Macro
- - If the macro starts by a jump, the dummy will always jump
- - Fix dummy "block first attack"
- - Winning in training mode make you lose any control
-
 
  435c878
 */

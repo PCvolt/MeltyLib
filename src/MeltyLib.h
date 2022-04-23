@@ -9,6 +9,7 @@
 #include "Address.h"
 #include "Character.h"
 #include "ComboInfo.h"
+#include "Menu.h"
 #include "Stage.h"
 
 #endif //MELTYLIB_MELTYLIB_H

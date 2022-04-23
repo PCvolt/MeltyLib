@@ -1813,7 +1813,7 @@
         <Element Offset="16" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000010" Description="Action" DisplayMethod="Unsigned Integer"/>
         <Element Offset="20" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000014" Description="animId" DisplayMethod="Unsigned Integer"/>
         <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="u_nextAnimId" DisplayMethod="Unsigned Integer"/>
-        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="animSubcounter" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="timePerSprite" DisplayMethod="Unsigned Integer"/>
         <Element Offset="32" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000020" DisplayMethod="Hexadecimal"/>
         <Element Offset="40" Vartype="4 Bytes" Bytesize="4" RLECount="10" OffsetHex="00000028" DisplayMethod="Unsigned Integer"/>
         <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="u_perfect" DisplayMethod="Unsigned Integer"/>

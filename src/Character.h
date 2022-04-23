@@ -13,11 +13,11 @@ namespace MeltyLib {
         HEAT,
         MAX,
         BLODDHEAT,
-        UNKNOWN,
+        UNKNOWN_MODE,
         UNLIMITED
     };
 
-#pragma deprecated(UNKNOWN)
+#pragma deprecated(UNKNOWN_MODE)
 
     enum Character : unsigned short {
         SION,
@@ -116,10 +116,11 @@ namespace MeltyLib {
         int moon;
 
         Action action;
-        int animCounter;
-        int spriteCounter;
-        int animSubcounter; //0x1C
-        char pad1[48];
+        int spriteIndex;
+        int nextSpriteIndex;
+        int timePerSprite; //0x1C
+        int spriteOrActionChange; //2 on action change, 1 on sprite change
+        char pad1[44];
 
         int u_perfect; //0x50
         char pad2[16];
