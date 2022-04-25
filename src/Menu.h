@@ -112,5 +112,7 @@ namespace MeltyLib {
         int hiddenMenuFlag;
         InformationMenu *pInformationMenu;
     };
+
+    extern Menu &trainingMenu;
 }
 #endif //MELTYLIB_MENU_H

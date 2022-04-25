@@ -19,5 +19,6 @@ add_library(
 add_executable(
         MeltyLib_tests
         tests/main.cpp)
+
 target_include_directories(MeltyLib_tests PRIVATE src)
 target_link_libraries(MeltyLib_tests MeltyLib)
