@@ -1,4 +1,0 @@
-C:/git/MeltyLib/out/CMakeFiles/MeltyLib.dir
-C:/git/MeltyLib/out/CMakeFiles/MeltyLib_tests.dir
-C:/git/MeltyLib/out/CMakeFiles/ALL_BUILD.dir
-C:/git/MeltyLib/out/CMakeFiles/ZERO_CHECK.dir
