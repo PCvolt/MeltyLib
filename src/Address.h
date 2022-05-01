@@ -66,7 +66,7 @@ namespace MeltyLib
         ADDR_DRAW_CHARACTERRESOURCES1_CALL = 0x4249CD, //Call to DrawTexture()
         ADDR_DRAW_CHARACTERRESOURCES2_CALL = 0x424B9D, //Call to DrawTexture()
 
-        /* Draw Functions */
+                /* Draw Functions */
         ADDR_DRAW_TEXTURE = 0x415580,
         ADDR_DRAW_CHARACTERRESOURCESTEXT = 0x41DBF0,
         ADDR_DRAW_CHARACTERS = 0x46E2E0,
@@ -76,7 +76,10 @@ namespace MeltyLib
         ADDR_DRAW_HUDTEXT = 0x476C70,
         ADDR_DRAW_RESOURCESHUD = 0x424DF0,
         ADDR_DRAW_BATTLEBHUD = 0x424100,
-        ADDR_DRAW_BATTLEBACKGROUND = 0x4B9540
+        ADDR_DRAW_BATTLEBACKGROUND = 0x4B9540,
+
+        /* Menu Calls */
+        ADDR_INIT_TRAININGMENU_CALL = 0x47817A
     };
 
     enum Address {
