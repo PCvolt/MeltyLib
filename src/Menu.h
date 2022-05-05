@@ -27,7 +27,7 @@ namespace MeltyLib {
     };
 
     struct MenuElement {
-        void *vftable();
+        void *vftable;
         int elementType;
         int isHovered;
         int canHover;
@@ -56,8 +56,7 @@ namespace MeltyLib {
     };
 
     struct MenuSet {
-        void *vftable();
-
+        void *vftable;
         int *pMenu; //(Menu *), but Menu is the one to init MenuSet
         char pad[60];
         int currHoveredItemIndex;
@@ -73,8 +72,7 @@ namespace MeltyLib {
     };
 
     struct Menu {
-        void *vftable();
-
+        void *vftable;
         int isMenuDisabled;
         int prevIsMenuDisabled;
         char pad[4];
@@ -84,7 +82,7 @@ namespace MeltyLib {
         int yOffset;
         char pad3[4];
         int xOffset;
-        int pad4[16];
+        char pad4[16];
         char label[28];
         int isRootMenu;
         int timeOpened;
@@ -114,5 +112,7 @@ namespace MeltyLib {
     };
 
     extern Menu &trainingMenu;
+    extern Menu &mainMenu;
+    extern Menu &optionsMenu;
 }
 #endif //MELTYLIB_MENU_H

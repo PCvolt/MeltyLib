@@ -16,12 +16,6 @@ CGAME_MENU_ELEMENT, CGAME_MENU_NORMALELEMENT, CGAME_MENU_SELECTELEMENT, CGAME_ME
 CPAUSEMENU: NORMAL_ELEMENT, SELECT_ELEMENT, SPACE_ELEMENT, FOLDER_ELEMENT, EXIT_ELEMENT
 
 
- 462780: noop this function to get the funny results
-
- 67bde8
-
- 451720 = practice mode ?
-
  0054EEE8 game mode (1 practice mode, 20 chara select, (4 bytes)
  0074D900 moon selector (4 bytes)
  0074D904 color selector (4 bytes)

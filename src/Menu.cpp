@@ -7,5 +7,7 @@
 
 namespace MeltyLib
 {
-    Menu &trainingMenu = *reinterpret_cast<Menu *>(ADDR_MENU);
+    Menu &trainingMenu = *reinterpret_cast<Menu *>(ADDR_TRAININGMENU);
+    Menu &mainMenu = *reinterpret_cast<Menu *>(ADDR_MAINMENU);
+    Menu &optionsMenu = *reinterpret_cast<Menu *>(ADDR_OPTIONSMENU);
 }

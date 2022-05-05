@@ -128,18 +128,15 @@ namespace MeltyLib
         ADDR_TIMER_DISPLAY_COUNTERHIT_C2 = 0x5581C8,
         ADDR_CAMERA_FOLLOW_MODE = 0x559546, //255 = normal, 0/1 = no care for sprize size, 2 = no care for characters
 
-        ADDR_MENU = 0x74D7FC,
+        ADDR_TRAININGMENU = 0x74D7FC,
+        ADDR_MAINMENU = 0x76E6D4,
+        ADDR_OPTIONSMENU = 0x76E98C,
+
         ADDR_CAMERA_SCALE_Y = 0x77C06C,
         ADDR_CAMERA_SCALE_Z = 0x77C094,
 
         ADDR_CAMERA_SCALE_X = 0x77C158,
         ADDR_D3DX9_DEVICE = 0x76e7d4
-
-
-        //MENU
-        // 0x74d7fc + 10] + 0] + 0] = pTrainingMenu
-        // 0x76E6D4 + 10] + 0] + 0] = pMainMenu
-        // 0x76E98C + 10] + 0] + 0] = OptionsMenu
     };
 }
 

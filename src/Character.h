@@ -277,6 +277,4 @@ namespace MeltyLib {
     extern CharacterObject &character3;
     extern CharacterObject &character4;
 }
-
-
 #endif //MELTYLIB_CHARACTER_H

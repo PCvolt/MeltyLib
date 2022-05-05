@@ -242,7 +242,7 @@ void testMenuElementOffset()
 {
     auto *menuElement = (MeltyLib::MenuElement *)nullptr;
 
-    //check_offset(menuElement, vftable, 0x);
+    check_offset(menuElement, vftable, 0x0);
     check_offset(menuElement, elementType, 0x4);
     check_offset(menuElement, isHovered, 0x8);
     check_offset(menuElement, canHover, 0xC);
@@ -265,7 +265,7 @@ void testMenuOffsets()
 {
     auto *menu = (MeltyLib::Menu *)nullptr;
 
-    //check_offset(menu, vftable, 0x0);
+    check_offset(menu, vftable, 0x0);
     check_offset(menu, isMenuDisabled, 0x4);
     check_offset(menu, prevIsMenuDisabled, 0x8);
 
@@ -306,7 +306,7 @@ void testMenuSetOffsets()
 {
     auto *menuSet = (MeltyLib::MenuSet *)nullptr;
 
-    //check_offset(menuSet, vftable, 0x0);
+    check_offset(menuSet, vftable, 0x0);
     check_offset(menuSet, pMenu, 0x4);
 
     check_offset(menuSet, currHoveredItemIndex, 0x40);
@@ -332,7 +332,7 @@ int main() {
     testComboInfoOffsets();
     testActionsValues();
 
-    testMenuSetOffsets();
+    //testMenuSetOffsets();
     testMenuOffsets();
 
     return 0;
