@@ -79,7 +79,9 @@ namespace MeltyLib
         ADDR_DRAW_BATTLEBACKGROUND = 0x4B9540,
 
         /* Menu Calls */
+        ADDR_CREATE_TRAININGMENU_CALL = 0x477F6A,
         ADDR_INIT_TRAININGMENU_CALL = 0x47817A
+
     };
 
     enum Address {
