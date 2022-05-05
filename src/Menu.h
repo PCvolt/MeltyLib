@@ -111,8 +111,8 @@ namespace MeltyLib {
         InformationMenu *pInformationMenu;
     };
 
-    extern Menu &trainingMenu;
-    extern Menu &mainMenu;
-    extern Menu &optionsMenu;
+    //extern Menu *&trainingMenu;
+    //extern Menu *&mainMenu;
+    //extern Menu *&optionsMenu;
 }
 #endif //MELTYLIB_MENU_H
