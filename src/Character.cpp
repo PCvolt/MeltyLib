@@ -5,8 +5,7 @@
 #include "Character.h"
 #include "Address.h"
 
-namespace MeltyLib
-{
+namespace MeltyLib {
     CharacterObject &character1 = *reinterpret_cast<CharacterObject *>(ADDR_CHARACTER_1);
     CharacterObject &character2 = *reinterpret_cast<CharacterObject *>(ADDR_CHARACTER_2);
     CharacterObject &character3 = *reinterpret_cast<CharacterObject *>(ADDR_CHARACTER_3); // Teamed with character1

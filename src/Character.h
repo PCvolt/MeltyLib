@@ -265,8 +265,7 @@ namespace MeltyLib {
         char padEnd[264]; //0xAF8 - 0x9F4
     };
 
-    struct CharacterObject
-    {
+    struct CharacterObject {
         char isInitialized; //0x00
         char pad[3];
         CharacterSubObject CSO;

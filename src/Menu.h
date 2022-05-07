@@ -5,6 +5,7 @@
 #ifndef MELTYLIB_MENU_H
 #define MELTYLIB_MENU_H
 
+#include <string>
 // 0xE8 or 0xe0 ? size of Menu
 // 0x78 size of TrainingMenu
 // 0x?? SpaceElement size
@@ -26,6 +27,14 @@ namespace MeltyLib {
         // probably more fields
     };
 
+    enum ElementType {
+        NORMAL_ELEMENT,
+        SELECT_ELEMENT,
+        SPACE_ELEMENT,
+        FOLDER_ELEMENT,
+        EXIT_ELEMENT
+    };
+
     struct MenuElement {
         void *vftable;
         int elementType;
@@ -36,15 +45,55 @@ namespace MeltyLib {
         int marginBottom;
         int textOpacity;
         char pad[4];
-        char label[24];
-        char pad2[8];
-        char name[24];
+        char label[16];
+        int labelLength;
+        int labelMaxLength;
+        char pad2[4];
+        char name[16];
+        int nameLength;
+        int nameMaxLength;
         int selectionIndex;
         int selectedItemLabelXOffset;
         char pad4[4];
         SelectItem *selectItemList;
         SelectItem *selectItemListEnd;
         char pad5[16];
+
+        MenuElement(ElementType type) {
+            this->textOpacity = 1;
+
+            switch (type) {
+                case NORMAL_ELEMENT:
+                    this->vftable = (void *) 0x53604C;
+                    this->elementType = 1;
+                    this->canHover = 1;
+                    strcpy_s(this->label, "NORMAL SETTINGS");
+                    strcpy_s(this->name, "NORMAL_SETTINGS");
+                    this->marginBottom = 18;
+                    break;
+                case SELECT_ELEMENT:
+                    this->vftable = (void *) 0x536654;
+                    this->elementType = 1;
+                    this->canHover = 1;
+                    strcpy_s(this->label, "SELECT SETTINGS");
+                    strcpy_s(this->name, "SELECT_SETTINGS");
+                    this->marginBottom = 18;
+                    break;
+                case SPACE_ELEMENT:
+                    this->vftable = (void *) 0x536094;
+                    this->elementType = 2;
+                    this->canHover = 0;
+                    this->marginBottom = 8;
+                    break;
+                case FOLDER_ELEMENT:
+                    break;
+                case EXIT_ELEMENT:
+                    break;
+                default:
+                    break;
+            }
+
+        }
     };
 
     struct InformationMenu {
@@ -55,10 +104,12 @@ namespace MeltyLib {
         // probably more fields
     };
 
+    struct Menu; // Forward declaration
+
     struct MenuSet {
         void *vftable;
-        int *pMenu; //(Menu *), but Menu is the one to init MenuSet
-        char pad[60];
+        Menu *pMenu;
+        char pad[56];
         int currHoveredItemIndex;
         int prevHoveredItemIndex;
         char pad2[4];

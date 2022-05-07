@@ -5,7 +5,6 @@
 #include "ComboInfo.h"
 #include "Address.h"
 
-namespace MeltyLib
-{
+namespace MeltyLib {
     ComboInfo &comboInfo = *reinterpret_cast<ComboInfo *>(ADDR_COMBO_INFO);
 }

@@ -5,8 +5,7 @@
 #ifndef MELTYLIB_ADDRESS_H
 #define MELTYLIB_ADDRESS_H
 
-namespace MeltyLib
-{
+namespace MeltyLib {
     enum MenuIndex {
         UNK = 25, //ref at 0x478657
         PRACTICE = 60,
@@ -50,7 +49,7 @@ namespace MeltyLib
         ADDR_UPDATEGAME_CALL = 0x4337AB,
         ADDR_DRAW_BATTLESCENE_CALL = 0x4235D7,
 
-                /* Draw Function Calls */
+        /* Draw Function Calls */
         ADDR_DRAW_CHARACTERS_CALL = 0x42388D,
         ADDR_DRAW_CHARACTERSHADOWS_CALL = 0x41B47C,
         ADDR_DRAW_EFFECTS1_CALL = 0x423892,
@@ -66,7 +65,7 @@ namespace MeltyLib
         ADDR_DRAW_CHARACTERRESOURCES1_CALL = 0x4249CD, //Call to DrawTexture()
         ADDR_DRAW_CHARACTERRESOURCES2_CALL = 0x424B9D, //Call to DrawTexture()
 
-                /* Draw Functions */
+        /* Draw Functions */
         ADDR_DRAW_TEXTURE = 0x415580,
         ADDR_DRAW_CHARACTERRESOURCESTEXT = 0x41DBF0,
         ADDR_DRAW_CHARACTERS = 0x46E2E0,

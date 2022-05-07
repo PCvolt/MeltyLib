@@ -252,8 +252,12 @@ void testMenuElementOffset()
     check_offset(menuElement, textOpacity, 0x1C);
 
     check_offset(menuElement, label, 0x24);
+    check_offset(menuElement, labelLength, 0x34);
+    check_offset(menuElement, labelMaxLength, 0x38);
 
     check_offset(menuElement, name, 0x40);
+    check_offset(menuElement, nameLength, 0x50);
+    check_offset(menuElement, nameMaxLength, 0x54);
     check_offset(menuElement, selectionIndex, 0x58);
     check_offset(menuElement, selectedItemLabelXOffset, 0x5C);
 
@@ -332,8 +336,9 @@ int main() {
     testComboInfoOffsets();
     testActionsValues();
 
-    //testMenuSetOffsets();
+    testMenuSetOffsets();
     testMenuOffsets();
+    testMenuElementOffset();
 
     return 0;
 }
