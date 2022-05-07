@@ -62,8 +62,8 @@ namespace MeltyLib {
         int currHoveredItemIndex;
         int prevHoveredItemIndex;
         char pad2[4];
-        MenuElement *pElementsList;
-        MenuElement *pElementsListEnd;
+        MenuElement **pElementsList;
+        MenuElement **pElementsListEnd;
         char pad3[20];
         int hasFinishedDrawing;
         int timeActive;
