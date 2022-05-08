@@ -273,12 +273,19 @@ void testMenuOffsets()
     check_offset(menu, isMenuDisabled, 0x4);
     check_offset(menu, prevIsMenuDisabled, 0x8);
 
-    check_offset(menu, backgroundXOffset, 0x40);
+    check_offset(menu, ppMenuSet, 0x10);
+    check_offset(menu, currentElementName, 0x24);
+    check_offset(menu, currentElementNameLength, 0x34);
+    check_offset(menu, currentElementNameMaxLength, 0x38);
+
     check_offset(menu, yOffset, 0x44);
 
     check_offset(menu, xOffset, 0x4C);
 
     check_offset(menu, label, 0x60);
+    check_offset(menu, labelLength, 0x70);
+    check_offset(menu, labelMaxLength, 0x74);
+
     check_offset(menu, isRootMenu, 0x7C);
     check_offset(menu, timeOpened, 0x80);
     check_offset(menu, openSubmenuIndex, 0x84);

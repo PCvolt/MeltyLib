@@ -87,8 +87,7 @@ namespace MeltyLib {
                     break;
                 case SELECT_ELEMENT:
                     InitNormalElement(label, name);
-                    //this->vftable = (void *) 0x536604; //from decompied code, who to trust
-                    this->vftable = (void *) 0x536654; //from trainingMenu example
+                    this->vftable = (void *) 0x536654;
                     this->selectedItemLabelXOffset = 128;
                     this->selectionIndex = 0;
                     this->pSelectItemList = 0;
@@ -144,13 +143,19 @@ namespace MeltyLib {
         int prevIsMenuDisabled;
         char pad[4];
         MenuSet **ppMenuSet;
-        char pad2[44];
-        int backgroundXOffset;
+        char pad1[16];
+        char currentElementName[16]; //How does it deal with longer names? It shows 32 as Max length
+        int currentElementNameLength;
+        int currentElementNameMaxLength;
+        char pad2[8];
         int yOffset;
         char pad3[4];
         int xOffset;
         char pad4[16];
-        char label[28];
+        char label[16];
+        int labelLength;
+        int labelMaxLength;
+        char pad5[4];
         int isRootMenu;
         int timeOpened;
         int openSubmenuIndex;
@@ -160,11 +165,11 @@ namespace MeltyLib {
         float progressionRate;
         float degressionRate;
         int isBlurred;
-        char pad5[4];
+        char pad6[4];
         int isMenuBackgroundDisplayed;
         int u_layer;
         int paragraphMode;
-        char pad6[4];
+        char pad7[4];
         int xStretch;
         int yStretch;
         int isMenuLit;
@@ -176,6 +181,40 @@ namespace MeltyLib {
         Menu *pDummySettingsMenu;
         int hiddenMenuFlag;
         InformationMenu *pInformationMenu;
+
+        Menu()
+        {
+            this->vftable = (void *) 0x53d3c0; //base menu, changes for all inherited menu class
+            this->ppMenuSet = 0;
+            this->isMenuDisabled = 0;
+
+            this->currentElementName[0] = '\0';
+            this->currentElementNameLength = 0;
+            this->currentElementNameMaxLength = 15;
+            this->xOffset = 340; //266 in training menu
+            this->label[0] = '\0';
+            this->labelLength = 0;
+            this->labelMaxLength = 15;
+
+            this->u_layer = 752; //figure what this is
+            this->isRootMenu = 0;
+            this->timeOpened = 0;
+            this->openSubmenuIndex = 0;
+            this->timeSubmenuOpened = 0;
+
+            this->closeAnimProgression = 0;
+            this->opacity = 1;
+            this->progressionRate = 0.06250000;
+            this->degressionRate = -0.06250000;
+            this->isBlurred = 1;
+            this->isMenuBackgroundDisplayed = 1;
+            this->paragraphMode = 0;
+            this->xStretch = 16;
+            this->yStretch = 16;
+
+            this->isMenuLit = 1;
+            this->dimScreenPercentage = 0;
+        }
     };
 
     //extern Menu *&trainingMenu;
