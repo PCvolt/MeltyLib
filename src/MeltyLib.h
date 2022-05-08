@@ -5,6 +5,9 @@
 #ifndef MELTYLIB_MELTYLIB_H
 #define MELTYLIB_MELTYLIB_H
 
+#include <d3d9.h>
+#include "../include/directx/d3dx9.h"
+
 #include "Action.h"
 #include "Address.h"
 #include "Character.h"
