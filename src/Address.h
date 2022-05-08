@@ -91,6 +91,10 @@ namespace MeltyLib {
         //0xDC gap between these two
         ADDR_COMBO_INFO = 0x557DFC,
 
+        // https://github.com/kosunan/MBAACC_Training/blob/32fac1a24cada4d4ebcd52b3e1f346fe14d340dd/src/ad_cc.py#L64
+        ADDR_P1_COMMITACTIONTIME = 0x557FC0,
+        ADDR_P2_COMMITACTIONTIME = 0x5581CC,
+
         ADDR_CAMERA_POS_COMPUTE = 0x44ba40,
         ADDR_CAMERA_ZOOM_COMPUTE = 0x44bcb0,
 
