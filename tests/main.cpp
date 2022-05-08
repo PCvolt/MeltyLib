@@ -261,8 +261,8 @@ void testMenuElementOffset()
     check_offset(menuElement, selectionIndex, 0x58);
     check_offset(menuElement, selectedItemLabelXOffset, 0x5C);
 
-    check_offset(menuElement, selectItemList, 0x64);
-    check_offset(menuElement, selectItemListEnd, 0x68);
+    check_offset(menuElement, pSelectItemList, 0x64);
+    check_offset(menuElement, pSelectItemListEnd, 0x68);
 }
 
 void testMenuOffsets()

@@ -43,7 +43,7 @@ namespace MeltyLib {
         int timeHovered;
         int timeNotHovered;
         int marginBottom;
-        int textOpacity;
+        float textOpacity;
         char pad[4];
         char label[16];
         int labelLength;
@@ -55,31 +55,47 @@ namespace MeltyLib {
         int selectionIndex;
         int selectedItemLabelXOffset;
         char pad4[4];
-        SelectItem *selectItemList;
-        SelectItem *selectItemListEnd;
+        SelectItem *pSelectItemList;
+        SelectItem *pSelectItemListEnd;
         char pad5[16];
 
-        MenuElement(ElementType type) {
+        void InitNormalElement(const char *label, const char *name)
+        {
+            this->vftable = (void *) 0x53604C;
+            this->elementType = 1;
+            this->isHovered = 0;
+            this->canHover = 1;
+            strcpy_s(this->label, label);
+            this->labelLength = 0;
+            this->labelMaxLength = 15;
+            strcpy_s(this->name, name);
+            this->nameLength = 0;
+            this->nameMaxLength = 15;
+            this->marginBottom = 18;
+        }
+
+        MenuElement(ElementType type, const char *label, const char *name) {
             this->textOpacity = 1;
+            this->timeHovered = 0;
+            this->timeNotHovered = 999999;
+            this->labelMaxLength = 15; //check how menu element is init and mimic it
+            this->nameMaxLength = 15;
 
             switch (type) {
                 case NORMAL_ELEMENT:
-                    this->vftable = (void *) 0x53604C;
-                    this->elementType = 1;
-                    this->canHover = 1;
-                    strcpy_s(this->label, "NORMAL SETTINGS");
-                    strcpy_s(this->name, "NORMAL_SETTINGS");
-                    this->marginBottom = 18;
+                    InitNormalElement(label, name);
                     break;
                 case SELECT_ELEMENT:
-                    this->vftable = (void *) 0x536654;
-                    this->elementType = 1;
-                    this->canHover = 1;
-                    strcpy_s(this->label, "SELECT SETTINGS");
-                    strcpy_s(this->name, "SELECT_SETTINGS");
-                    this->marginBottom = 18;
+                    InitNormalElement(label, name);
+                    //this->vftable = (void *) 0x536604; //from decompied code, who to trust
+                    this->vftable = (void *) 0x536654; //from trainingMenu example
+                    this->selectedItemLabelXOffset = 128;
+                    this->selectionIndex = 0;
+                    this->pSelectItemList = 0;
+                    this->pSelectItemListEnd = 0;
                     break;
                 case SPACE_ELEMENT:
+                    InitNormalElement("", "");
                     this->vftable = (void *) 0x536094;
                     this->elementType = 2;
                     this->canHover = 0;
