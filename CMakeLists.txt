@@ -14,7 +14,8 @@ add_library(
         src/ComboInfo.h src/ComboInfo.cpp
         src/MeltyLib.h
         src/Stage.h
-        src/Menu.h src/Menu.cpp)
+        src/Menu.h src/Menu.cpp
+        src/DrawUtils.h src/DrawUtils.cpp src/Vector2.h src/Font.cpp src/Font.h)
 
 add_executable(
         MeltyLib_tests
