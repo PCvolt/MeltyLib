@@ -15,7 +15,10 @@ add_library(
         src/MeltyLib.h
         src/Stage.h
         src/Menu.h src/Menu.cpp
-        src/DrawUtils.h src/DrawUtils.cpp src/Vector2.h src/Font.cpp src/Font.h)
+        src/DrawUtils.h src/DrawUtils.cpp
+        src/Vector2.h
+        src/Font.cpp src/Font.h
+        src/TextureManager.cpp src/TextureManager.h)
 
 add_executable(
         MeltyLib_tests

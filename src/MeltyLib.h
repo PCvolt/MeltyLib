@@ -14,5 +14,9 @@
 #include "ComboInfo.h"
 #include "Menu.h"
 #include "Stage.h"
+#include "Vector2.h"
+#include "DrawUtils.h"
+#include "Font.h"
+#include "TextureManager.h"
 
 #endif //MELTYLIB_MELTYLIB_H

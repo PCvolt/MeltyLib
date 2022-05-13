@@ -7,6 +7,10 @@
 #endif //MELTYLIB_FONT_H
 
 namespace MeltyLib {
+    // Bravo Bold
+    // DejaVu Sans Condensed
+    // NewCesannePro
+
     struct MeltyFont {
 
     };

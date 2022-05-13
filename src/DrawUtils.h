@@ -105,15 +105,5 @@ namespace MeltyLib {
         typedef Rect<float> FloatRect;
     }
 }
-// Bravo Bold
-// DejaVu Sans Condensed
-// NewCesannePro
-
-/*
-DirectX draw frame advantage and gaps
-disable fps counter drawTexture
-toggle normal -> black -> green screen background
-it crashes when changing select items wtf
-*/
 
 #endif //MELTYLIB_DRAWUTILS_H

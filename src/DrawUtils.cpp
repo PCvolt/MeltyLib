@@ -3,6 +3,7 @@
 //
 
 #include "DrawUtils.h"
+#include "TextureManager.h"
 #include <cmath>
 
 namespace MeltyLib {
