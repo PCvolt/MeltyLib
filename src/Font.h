@@ -4,7 +4,6 @@
 
 #ifndef MELTYLIB_FONT_H
 #define MELTYLIB_FONT_H
-#endif //MELTYLIB_FONT_H
 
 namespace MeltyLib {
     // Bravo Bold
@@ -15,3 +14,4 @@ namespace MeltyLib {
 
     };
 }
+#endif //MELTYLIB_FONT_H

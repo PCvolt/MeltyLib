@@ -93,7 +93,34 @@ namespace MeltyLib {
             bool createFromText(const char *str, MeltyFont &font, Vector2u size, Vector2i *realSize = nullptr);
         };
 
+        struct Vertex {
+            float x, y, z;
+            float rhw; // RHW = reciprocal of the homogeneous (clip space) w coordinate of a vertex (the 4th dimension for computing the scaling and translating)
+            D3DCOLOR color;
+            float u, v;
 
+            template<typename T>
+            Vertex operator+(const Vector2<T> &vec) const
+            {
+                return {
+                        this->x + vec.x,
+                        this->y + vec.y,
+                        this->z,
+                        this->rhw,
+                        this->color,
+                        this->u,
+                        this->v
+                };
+            }
+
+            template<typename T>
+            Vertex &operator+=(const Vector2<T> &vec)
+            {
+                this->x += vec.x;
+                this->y += vec.y;
+                return *this;
+            }
+        };
 
         template<typename T>
         struct Rect {
