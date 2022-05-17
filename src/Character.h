@@ -97,7 +97,7 @@ namespace MeltyLib {
         char pad4[10];
         char hurtboxCount;
         char hitboxCount;
-        char pad5[9];
+        char pad5[8];
         Box *hurtboxList;
         Box *hitboxList;
     };

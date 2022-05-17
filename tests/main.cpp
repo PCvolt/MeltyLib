@@ -347,8 +347,8 @@ void testTextureOffsets()
     check_offset(texture, yScale, 0x34);
     check_offset(texture, hurtboxCount, 0x42);
     check_offset(texture, hitboxCount, 0x43);
-    check_offset(texture, hurtboxList, 0x50);
-    check_offset(texture, hitboxList, 0x54);
+    check_offset(texture, hurtboxList, 0x4C);
+    check_offset(texture, hitboxList, 0x50);
 }
 
 void testObjectsSize()
