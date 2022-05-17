@@ -91,15 +91,15 @@ namespace MeltyLib {
         char red;
         char green;
         char blue;
-        char pad2[2];
-        char pad3[20];
+        char pad3[21];
         float xScale;
         float yScale;
         char pad4[10];
+        char hurtboxCount;
         char hitboxCount;
-        char pad5[5];
-        Box *collisionAndHurtboxList;
-        Box *meleeHitboxesList;
+        char pad5[9];
+        Box *hurtboxList;
+        Box *hitboxList;
     };
 
     //FX array, size 0x33C, start at 0x67BDEC

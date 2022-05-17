@@ -214,7 +214,7 @@ void testCharacterObjectOffsets()
     check_offset(cso, opponentIsLeftToMe, 0x311);
     check_offset(cso, stanceFlag, 0x314);
     check_offset(cso, pCurrentSequence, 0x318);
-    check_offset(cso, currentTexture, 0x31C);
+    check_offset(cso, texture, 0x31C);
     check_offset(cso, u_attackActives2, 0x320);
     check_offset(cso, pItselfCO, 0x324);
 
@@ -332,6 +332,25 @@ void testMenuSetOffsets()
     check_offset(menuSet, willClose, 0x74);
 }
 
+void testTextureOffsets()
+{
+    auto *texture = (MeltyLib::Texture *)nullptr;
+
+    check_offset(texture, spriteIndex, 0x2);
+    check_offset(texture, u_assetsIndex, 0x3);
+    check_offset(texture, xOffset, 0x4);
+    check_offset(texture, yOffset, 0x8);
+    check_offset(texture, red, 0x18);
+    check_offset(texture, green, 0x19);
+    check_offset(texture, blue, 0x1A);
+    check_offset(texture, xScale, 0x30);
+    check_offset(texture, yScale, 0x34);
+    check_offset(texture, hurtboxCount, 0x42);
+    check_offset(texture, hitboxCount, 0x43);
+    check_offset(texture, hurtboxList, 0x50);
+    check_offset(texture, hitboxList, 0x54);
+}
+
 void testObjectsSize()
 {
     assert_equal(sizeof(MeltyLib::CharacterObject), 0xAFC);
@@ -342,6 +361,7 @@ int main() {
     testCharacterObjectOffsets();
     testComboInfoOffsets();
     testActionsValues();
+    testTextureOffsets();
 
     testMenuSetOffsets();
     testMenuOffsets();
