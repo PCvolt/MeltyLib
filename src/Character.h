@@ -236,7 +236,7 @@ namespace MeltyLib {
         char pad175[2];
         int stanceFlag; //0x318 type?
         int *pCurrentSequence; //0x31C type?
-        int *currentTexture; //0x320 type Texture size 0x54, array
+        Texture *texture; //0x320
         int u_attackActives2; //0x324
         struct CharacterObject *pItselfCO; //0x328
         char pad18[8];
