@@ -98,8 +98,8 @@ namespace MeltyLib {
         char hurtboxCount;
         char hitboxCount;
         char pad5[8];
-        Box *hurtboxList;
-        Box *hitboxList;
+        Box **hurtboxList;
+        Box **hitboxList;
     };
 
     //FX array, size 0x33C, start at 0x67BDEC
