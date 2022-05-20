@@ -135,10 +135,12 @@ namespace MeltyLib {
         PTR_MAINMENU = 0x76E6D4,
         PTR_OPTIONSMENU = 0x76E98C,
 
-        ADDR_CAMERA_SCALE_Y = 0x77C06C,
-        ADDR_CAMERA_SCALE_Z = 0x77C094,
 
+        ADDR_CAMERA_SCALE_LERP = 0x54EB70,
         ADDR_CAMERA_SCALE_X = 0x77C158,
+        ADDR_CAMERA_SCALE_Y = 0x77C06C, //?
+        ADDR_CAMERA_SCALE_Z = 0x77C094, //?
+
         ADDR_D3D9_DEVICE = 0x76e7d4
     };
 }
